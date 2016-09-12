@@ -40,11 +40,11 @@
     }
     
         // Success!  Now, start monitoring output file handle for data
-    NSFileHandle *readHandle = [hiddenTask outputFileHandle];
-    NSData *outputData = [readHandle readDataToEndOfFile];
-    NSString *outputString = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"%@",outputString);
+//    NSFileHandle *readHandle = [hiddenTask outputFileHandle];
+//    NSData *outputData = [readHandle readDataToEndOfFile];
+//    NSString *outputString = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+//    
+//    NSLog(@"%@",outputString);
     
     
     
@@ -92,7 +92,7 @@
 //                //Show error termination
 //        }
 //    }];
-    [hiddenTask launch];
+//    [hiddenTask launch];
     
 }
 

@@ -226,7 +226,14 @@ OSStatus const errAuthorizationFnNoLongerExists = -70001;
     // get file handle for the command output
     _outputFileHandle = [[NSFileHandle alloc] initWithFileDescriptor:fileno(outputFile) closeOnDealloc:YES];
     _processIdentifier = fcntl(fileno(outputFile), F_GETOWN, 0);
-    
+    [_outputFileHandle  setReadabilityHandler:^(NSFileHandle *file) {
+        NSData *data = [file availableData]; // this will read to EOF, so call only once
+        NSLog(@"+++++++Task output! \n%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        
+            // if you're collecting the whole output of a task, you may store it on a property
+            //maybe you want to appenddata
+            //[weakself.taskOutput appendData:data];
+    }];
     // start monitoring task
     checkStatusTimer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(checkTaskStatus) userInfo:nil repeats:YES];
         

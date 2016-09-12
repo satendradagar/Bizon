@@ -21,9 +21,10 @@
 -(IBAction)didClickActivate:(id)sender{
     
     NSLog(@"didClickActivate");
-//    [TaskManager runScript:@"fullScript" withArgs:nil];
+    [TaskManager runScript:@"fullScript" withArgs:nil];
     
-//    return;
+    return;
+
     NSString * output = nil;
     NSString * processErrorDescription = nil;
     [TaskManager runScriptAsAdministrator:@"fullScript" withArguments:nil output:&output errorDescription:&processErrorDescription];
@@ -45,7 +46,10 @@
 
 -(IBAction)didClickRestore:(id)sender{
 
-//    [TaskManager runScript:@"fullScript" withArgs:@[@"-uninstall"]];
+    [TaskManager runScript:@"fullScript" withArgs:@[@"-uninstall"]];
+    return;
+    
+    
     NSString * output = nil;
     NSString * processErrorDescription = nil;
     [TaskManager runScriptAsAdministrator:@"fullScript" withArguments:@[@"-uninstall"] output:&output errorDescription:&processErrorDescription];
@@ -67,8 +71,9 @@
 
 -(IBAction)didClickAuto:(id)sender{
     
-//    [TaskManager runScript:@"fullScript" withArgs:@[@"-a"]];
-
+    [TaskManager runScript:@"fullScript" withArgs:@[@"-a"]];
+    return;
+    
     NSString * output = nil;
     NSString * processErrorDescription = nil;
     [TaskManager runScriptAsAdministrator:@"fullScript" withArguments:nil output:&output errorDescription:&processErrorDescription];
