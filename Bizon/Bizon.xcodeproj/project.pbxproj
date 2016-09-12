@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A37F8181D83D67600FD2D92 /* Bizon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A37F8171D83D67600FD2D92 /* Bizon.h */; };
+		9A37F81A1D83D67600FD2D92 /* Bizon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F8191D83D67600FD2D92 /* Bizon.m */; };
+		9A37F81C1D83D67600FD2D92 /* Bizon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F81B1D83D67600FD2D92 /* Bizon.tiff */; };
+		9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F81D1D83D67600FD2D92 /* Bizon.xib */; };
+		9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8271D83EDFF00FD2D92 /* Media.xcassets */; };
+		9A37F82A1D83F68D00FD2D92 /* BizonBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8291D83F68D00FD2D92 /* BizonBox.png */; };
+		9A37F82E1D83F96300FD2D92 /* ActivateTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A37F82C1D83F96300FD2D92 /* ActivateTabView.h */; };
+		9A37F82F1D83F96300FD2D92 /* ActivateTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F82D1D83F96300FD2D92 /* ActivateTabView.m */; };
+		9A37F8321D83F97900FD2D92 /* OverViewTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A37F8301D83F97900FD2D92 /* OverViewTabView.h */; };
+		9A37F8331D83F97900FD2D92 /* OverViewTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F8311D83F97900FD2D92 /* OverViewTabView.m */; };
+		9A37F8361D83F99100FD2D92 /* LogTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A37F8341D83F99100FD2D92 /* LogTabView.h */; };
+		9A37F8371D83F99100FD2D92 /* LogTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F8351D83F99100FD2D92 /* LogTabView.m */; };
+		9A37F83A1D83F9AC00FD2D92 /* SupportTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A37F8381D83F9AC00FD2D92 /* SupportTabView.h */; };
+		9A37F83B1D83F9AC00FD2D92 /* SupportTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F8391D83F9AC00FD2D92 /* SupportTabView.m */; };
+		9A37F8441D8420D000FD2D92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F8431D8420D000FD2D92 /* AppDelegate.m */; };
+		9A37F8471D8420D000FD2D92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F8461D8420D000FD2D92 /* main.m */; };
+		9A37F8491D8420D000FD2D92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8481D8420D000FD2D92 /* Assets.xcassets */; };
+		9A37F84C1D8420D000FD2D92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F84A1D8420D000FD2D92 /* MainMenu.xib */; };
+		9A37F8571D8422D200FD2D92 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8271D83EDFF00FD2D92 /* Media.xcassets */; };
+		9A37F8611D84331B00FD2D92 /* Bizon.prefPane in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A37F8141D83D67600FD2D92 /* Bizon.prefPane */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9A4AB6A81D86857200783155 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4AB6A61D86857200783155 /* Reachability.h */; };
+		9A4AB6A91D86857200783155 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AB6A71D86857200783155 /* Reachability.m */; };
+		9AA96EE61D85287900139C22 /* TaskManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EE41D85287900139C22 /* TaskManager.h */; };
+		9AA96EE71D85287900139C22 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96EE51D85287900139C22 /* TaskManager.m */; };
+		9AA96EE91D8533E600139C22 /* fullScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96EE81D8533E600139C22 /* fullScript.sh */; };
+		9AA96EEC1D854C3E00139C22 /* STPrivilegedTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */; };
+		9AA96EED1D854C3E00139C22 /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A37F85E1D84326D00FD2D92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A37F80B1D83D67600FD2D92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A37F8131D83D67600FD2D92;
+			remoteInfo = Bizon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A37F8601D84327600FD2D92 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = PreferencePanes;
+			dstSubfolderSpec = 7;
+			files = (
+				9A37F8611D84331B00FD2D92 /* Bizon.prefPane in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A37F8141D83D67600FD2D92 /* Bizon.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bizon.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A37F8171D83D67600FD2D92 /* Bizon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bizon.h; sourceTree = "<group>"; };
+		9A37F8191D83D67600FD2D92 /* Bizon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bizon.m; sourceTree = "<group>"; };
+		9A37F81B1D83D67600FD2D92 /* Bizon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Bizon.tiff; sourceTree = "<group>"; };
+		9A37F81E1D83D67600FD2D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Bizon.xib; sourceTree = "<group>"; };
+		9A37F8201D83D67600FD2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A37F8271D83EDFF00FD2D92 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		9A37F8291D83F68D00FD2D92 /* BizonBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BizonBox.png; path = ../../../../../Desktop/LDS/Bizon/BizonBox.png; sourceTree = "<group>"; };
+		9A37F82C1D83F96300FD2D92 /* ActivateTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateTabView.h; sourceTree = "<group>"; };
+		9A37F82D1D83F96300FD2D92 /* ActivateTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateTabView.m; sourceTree = "<group>"; };
+		9A37F8301D83F97900FD2D92 /* OverViewTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewTabView.h; sourceTree = "<group>"; };
+		9A37F8311D83F97900FD2D92 /* OverViewTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewTabView.m; sourceTree = "<group>"; };
+		9A37F8341D83F99100FD2D92 /* LogTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogTabView.h; sourceTree = "<group>"; };
+		9A37F8351D83F99100FD2D92 /* LogTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogTabView.m; sourceTree = "<group>"; };
+		9A37F8381D83F9AC00FD2D92 /* SupportTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportTabView.h; sourceTree = "<group>"; };
+		9A37F8391D83F9AC00FD2D92 /* SupportTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportTabView.m; sourceTree = "<group>"; };
+		9A37F8401D8420D000FD2D92 /* Test Preferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test Preferences.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A37F8421D8420D000FD2D92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9A37F8431D8420D000FD2D92 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A37F8461D8420D000FD2D92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A37F8481D8420D000FD2D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A37F84B1D8420D000FD2D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9A37F84D1D8420D000FD2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4AB6A61D86857200783155 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9A4AB6A71D86857200783155 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9AA96EE41D85287900139C22 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
+		9AA96EE51D85287900139C22 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
+		9AA96EE81D8533E600139C22 /* fullScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fullScript.sh; sourceTree = "<group>"; };
+		9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
+		9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A37F8101D83D67600FD2D92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A37F83D1D8420D000FD2D92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A37F80A1D83D67600FD2D92 = {
+			isa = PBXGroup;
+			children = (
+				9A37F8161D83D67600FD2D92 /* Bizon */,
+				9A37F8411D8420D000FD2D92 /* Test Preferences */,
+				9A37F8151D83D67600FD2D92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A37F8151D83D67600FD2D92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A37F8141D83D67600FD2D92 /* Bizon.prefPane */,
+				9A37F8401D8420D000FD2D92 /* Test Preferences.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A37F8161D83D67600FD2D92 /* Bizon */ = {
+			isa = PBXGroup;
+			children = (
+				9A4AB6A51D86857200783155 /* Reachability */,
+				9AA96EE31D85286200139C22 /* TaskManager */,
+				9A37F8171D83D67600FD2D92 /* Bizon.h */,
+				9A37F8191D83D67600FD2D92 /* Bizon.m */,
+				9A37F8291D83F68D00FD2D92 /* BizonBox.png */,
+				9A37F81B1D83D67600FD2D92 /* Bizon.tiff */,
+				9A37F81D1D83D67600FD2D92 /* Bizon.xib */,
+				9A37F82B1D83F92F00FD2D92 /* TabViews */,
+				9A37F8261D83EDA000FD2D92 /* Resources */,
+				9A37F8201D83D67600FD2D92 /* Info.plist */,
+			);
+			path = Bizon;
+			sourceTree = "<group>";
+		};
+		9A37F8261D83EDA000FD2D92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9AA96EE81D8533E600139C22 /* fullScript.sh */,
+				9A37F8271D83EDFF00FD2D92 /* Media.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9A37F82B1D83F92F00FD2D92 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				9A37F82C1D83F96300FD2D92 /* ActivateTabView.h */,
+				9A37F82D1D83F96300FD2D92 /* ActivateTabView.m */,
+				9A37F8301D83F97900FD2D92 /* OverViewTabView.h */,
+				9A37F8311D83F97900FD2D92 /* OverViewTabView.m */,
+				9A37F8341D83F99100FD2D92 /* LogTabView.h */,
+				9A37F8351D83F99100FD2D92 /* LogTabView.m */,
+				9A37F8381D83F9AC00FD2D92 /* SupportTabView.h */,
+				9A37F8391D83F9AC00FD2D92 /* SupportTabView.m */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
+		9A37F8411D8420D000FD2D92 /* Test Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				9A37F8421D8420D000FD2D92 /* AppDelegate.h */,
+				9A37F8431D8420D000FD2D92 /* AppDelegate.m */,
+				9A37F8481D8420D000FD2D92 /* Assets.xcassets */,
+				9A37F84A1D8420D000FD2D92 /* MainMenu.xib */,
+				9A37F84D1D8420D000FD2D92 /* Info.plist */,
+				9A37F8451D8420D000FD2D92 /* Supporting Files */,
+			);
+			path = "Test Preferences";
+			sourceTree = "<group>";
+		};
+		9A37F8451D8420D000FD2D92 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A37F8461D8420D000FD2D92 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A4AB6A51D86857200783155 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9A4AB6A61D86857200783155 /* Reachability.h */,
+				9A4AB6A71D86857200783155 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		9AA96EE31D85286200139C22 /* TaskManager */ = {
+			isa = PBXGroup;
+			children = (
+				9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */,
+				9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */,
+				9AA96EE41D85287900139C22 /* TaskManager.h */,
+				9AA96EE51D85287900139C22 /* TaskManager.m */,
+			);
+			path = TaskManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9A37F8111D83D67600FD2D92 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A37F8321D83F97900FD2D92 /* OverViewTabView.h in Headers */,
+				9AA96EE61D85287900139C22 /* TaskManager.h in Headers */,
+				9AA96EEC1D854C3E00139C22 /* STPrivilegedTask.h in Headers */,
+				9A37F82E1D83F96300FD2D92 /* ActivateTabView.h in Headers */,
+				9A37F8361D83F99100FD2D92 /* LogTabView.h in Headers */,
+				9A4AB6A81D86857200783155 /* Reachability.h in Headers */,
+				9A37F83A1D83F9AC00FD2D92 /* SupportTabView.h in Headers */,
+				9A37F8181D83D67600FD2D92 /* Bizon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9A37F8131D83D67600FD2D92 /* Bizon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A37F8231D83D67600FD2D92 /* Build configuration list for PBXNativeTarget "Bizon" */;
+			buildPhases = (
+				9A37F80F1D83D67600FD2D92 /* Sources */,
+				9A37F8101D83D67600FD2D92 /* Frameworks */,
+				9A37F8111D83D67600FD2D92 /* Headers */,
+				9A37F8121D83D67600FD2D92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bizon;
+			productName = Bizon;
+			productReference = 9A37F8141D83D67600FD2D92 /* Bizon.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+		9A37F83F1D8420D000FD2D92 /* Test Preferences */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A37F84E1D8420D000FD2D92 /* Build configuration list for PBXNativeTarget "Test Preferences" */;
+			buildPhases = (
+				9A37F83C1D8420D000FD2D92 /* Sources */,
+				9A37F83D1D8420D000FD2D92 /* Frameworks */,
+				9A37F83E1D8420D000FD2D92 /* Resources */,
+				9A37F8601D84327600FD2D92 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A37F85F1D84326D00FD2D92 /* PBXTargetDependency */,
+			);
+			name = "Test Preferences";
+			productName = "Test Preferences";
+			productReference = 9A37F8401D8420D000FD2D92 /* Test Preferences.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A37F80B1D83D67600FD2D92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Satendra Singh";
+				TargetAttributes = {
+					9A37F8131D83D67600FD2D92 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					9A37F83F1D8420D000FD2D92 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 9A37F80E1D83D67600FD2D92 /* Build configuration list for PBXProject "Bizon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A37F80A1D83D67600FD2D92;
+			productRefGroup = 9A37F8151D83D67600FD2D92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A37F8131D83D67600FD2D92 /* Bizon */,
+				9A37F83F1D8420D000FD2D92 /* Test Preferences */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A37F8121D83D67600FD2D92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A37F82A1D83F68D00FD2D92 /* BizonBox.png in Resources */,
+				9AA96EE91D8533E600139C22 /* fullScript.sh in Resources */,
+				9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */,
+				9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */,
+				9A37F81C1D83D67600FD2D92 /* Bizon.tiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A37F83E1D8420D000FD2D92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A37F8491D8420D000FD2D92 /* Assets.xcassets in Resources */,
+				9A37F8571D8422D200FD2D92 /* Media.xcassets in Resources */,
+				9A37F84C1D8420D000FD2D92 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A37F80F1D83D67600FD2D92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A37F8331D83F97900FD2D92 /* OverViewTabView.m in Sources */,
+				9A37F81A1D83D67600FD2D92 /* Bizon.m in Sources */,
+				9A4AB6A91D86857200783155 /* Reachability.m in Sources */,
+				9A37F82F1D83F96300FD2D92 /* ActivateTabView.m in Sources */,
+				9A37F83B1D83F9AC00FD2D92 /* SupportTabView.m in Sources */,
+				9AA96EE71D85287900139C22 /* TaskManager.m in Sources */,
+				9AA96EED1D854C3E00139C22 /* STPrivilegedTask.m in Sources */,
+				9A37F8371D83F99100FD2D92 /* LogTabView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A37F83C1D8420D000FD2D92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A37F8471D8420D000FD2D92 /* main.m in Sources */,
+				9A37F8441D8420D000FD2D92 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A37F85F1D84326D00FD2D92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A37F8131D83D67600FD2D92 /* Bizon */;
+			targetProxy = 9A37F85E1D84326D00FD2D92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A37F81D1D83D67600FD2D92 /* Bizon.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A37F81E1D83D67600FD2D92 /* Base */,
+			);
+			name = Bizon.xib;
+			sourceTree = "<group>";
+		};
+		9A37F84A1D8420D000FD2D92 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A37F84B1D8420D000FD2D92 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A37F8211D83D67600FD2D92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9A37F8221D83D67600FD2D92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9A37F8241D83D67600FD2D92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Bizon/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corebits.Bizon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Debug;
+		};
+		9A37F8251D83D67600FD2D92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Bizon/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corebits.Bizon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Release;
+		};
+		9A37F84F1D8420D000FD2D92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Test Preferences/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.corebits.Test-Preferences";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9A37F8501D8420D000FD2D92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Test Preferences/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.corebits.Test-Preferences";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A37F80E1D83D67600FD2D92 /* Build configuration list for PBXProject "Bizon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A37F8211D83D67600FD2D92 /* Debug */,
+				9A37F8221D83D67600FD2D92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A37F8231D83D67600FD2D92 /* Build configuration list for PBXNativeTarget "Bizon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A37F8241D83D67600FD2D92 /* Debug */,
+				9A37F8251D83D67600FD2D92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A37F84E1D8420D000FD2D92 /* Build configuration list for PBXNativeTarget "Test Preferences" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A37F84F1D8420D000FD2D92 /* Debug */,
+				9A37F8501D8420D000FD2D92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A37F80B1D83D67600FD2D92 /* Project object */;
+}
