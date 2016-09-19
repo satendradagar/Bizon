@@ -14,4 +14,6 @@
 
 +(BOOL)isInternetAvailable;
 
++(instancetype)sharedInstance;
+
 @end

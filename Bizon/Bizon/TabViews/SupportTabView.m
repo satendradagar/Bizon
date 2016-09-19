@@ -7,6 +7,7 @@
 //
 
 #import "SupportTabView.h"
+#import "Utilities.h"
 
 @implementation SupportTabView
 
@@ -19,17 +20,33 @@
 
 -(IBAction)didClickShowUserManual:(id)sender{
     
+    if (NO == [Utilities isConnected]) {
+        [Utilities showNoInternetAlert];
+        return;
+    }
+    
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://bizon-tech.com/bizonbox2_manual.pdf"]];
 }
 
 -(IBAction)didClickKnowledgeBase:(id)sender{
     
+    if (NO == [Utilities isConnected]) {
+        [Utilities showNoInternetAlert];
+        return;
+    }
+    
+
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://bizon-tech.com/us/faq-egpu/"]];
 
 }
 
 -(IBAction)didClickShowSupport:(id)sender{
 
+    if (NO == [Utilities isConnected]) {
+        [Utilities showNoInternetAlert];
+        return;
+    }
+    
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"mailto:support@bizon-tech.com?Subject=Bizon%20Mac%20Support"]];
     
 }

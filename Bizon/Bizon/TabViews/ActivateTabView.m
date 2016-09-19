@@ -31,67 +31,16 @@
 
 }
 
-    
-    
-    
--(void)showActionSheet{
-    
-    progressController = [[ProgressBarController alloc] initWithWindowNibName:@"ProgressBarController"];
-    
-    [[progressController window] center];
-    [NSApp beginSheet:progressController.window
-       modalForWindow:self.window
-        modalDelegate:nil
-       didEndSelector:NULL
-          contextInfo:NULL];
-    [progressController.window makeKeyWindow];
-    [progressController.window orderFront:nil];
-    progressController.label.stringValue = @"Loading Script";
-}
-
--(void)showRestartActionSheet{
-
-    NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Restart Your Mac";
-    alert.informativeText = @"Please note that In order to complete the installation process, you need to restart Your Mac Machine";
-    [alert addButtonWithTitle:@"Restart"];
-    
-    
-    NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
-    NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
-    alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
-    
-    NSInteger answer = [alert runModal];
-
-    if (answer == NSAlertFirstButtonReturn) {
-        
-        NSString *scriptAction = @"restart"; // @"restart"/@"shut down"/@"sleep"/@"log out"
-        NSString *scriptSource = [NSString stringWithFormat:@"tell application \"Finder\" to %@", scriptAction];
-        NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
-        NSDictionary *errDict = nil;
-        if (![appleScript executeAndReturnError:&errDict]) {
-            NSLog(@"%@", errDict); 
-        }
-        
-    }
-
-}
-
--(void)closeSheetWithDelay{
-   
-    [NSApp endSheet:progressController.window];
-    [progressController.window orderOut:self];
-    
-}
-
--(void)closeSheet
-{
-    [self performSelector:@selector(closeSheetWithDelay) withObject:nil afterDelay:5.0];
-}
+#pragma mark - User Actions
 
 -(IBAction)didClickActivate:(id)sender{
     
     NSLog(@"didClickActivate");
+    if (NO == [Utilities isConnected]) {
+        [Utilities showNoInternetAlert];
+        return;
+    }
+
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
     
@@ -110,6 +59,11 @@
 }
 
 -(IBAction)didClickRestore:(id)sender{
+
+    if (NO == [Utilities isConnected]) {
+        [Utilities showNoInternetAlert];
+        return;
+    }
 
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
@@ -130,6 +84,11 @@
 
 -(IBAction)didClickAuto:(id)sender{
     
+    if (NO == [Utilities isConnected]) {
+        [Utilities showNoInternetAlert];
+        return;
+    }
+
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
 
@@ -165,6 +124,11 @@
 
 -(IBAction)didClickSkip:(id)sender{
     
+    if (NO == [Utilities isConnected]) {
+        [Utilities showNoInternetAlert];
+        return;
+    }
+
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
     
@@ -181,6 +145,8 @@
     
 
 }
+
+#pragma mark - Local methods
 
 - (NSString *)messageForServerMessage:(NSString *)msg
 {
@@ -221,4 +187,61 @@
         
     }
 }
+
+
+-(void)showActionSheet{
+    
+    progressController = [[ProgressBarController alloc] initWithWindowNibName:@"ProgressBarController"];
+    
+    [[progressController window] center];
+    [NSApp beginSheet:progressController.window
+       modalForWindow:self.window
+        modalDelegate:nil
+       didEndSelector:NULL
+          contextInfo:NULL];
+    [progressController.window makeKeyWindow];
+    [progressController.window orderFront:nil];
+    progressController.label.stringValue = @"Loading Script";
+}
+
+-(void)showRestartActionSheet{
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"Restart Your Mac";
+    alert.informativeText = @"Please note that In order to complete the installation process, you need to restart Your Mac Machine";
+    [alert addButtonWithTitle:@"Restart"];
+    
+    
+    NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
+    NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
+    alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
+    
+    NSInteger answer = [alert runModal];
+    
+    if (answer == NSAlertFirstButtonReturn) {
+        
+        NSString *scriptAction = @"restart"; // @"restart"/@"shut down"/@"sleep"/@"log out"
+        NSString *scriptSource = [NSString stringWithFormat:@"tell application \"Finder\" to %@", scriptAction];
+        NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
+        NSDictionary *errDict = nil;
+        if (![appleScript executeAndReturnError:&errDict]) {
+            NSLog(@"%@", errDict);
+        }
+        
+    }
+    
+}
+
+-(void)closeSheetWithDelay{
+    
+    [NSApp endSheet:progressController.window];
+    [progressController.window orderOut:self];
+    
+}
+
+-(void)closeSheet
+{
+    [self performSelector:@selector(closeSheetWithDelay) withObject:nil afterDelay:5.0];
+}
+
 @end

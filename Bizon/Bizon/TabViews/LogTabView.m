@@ -15,8 +15,15 @@
 -(void)awakeFromNib{
     
     [super awakeFromNib];
+    self.logTextView.editable = NO;
     self.logTextView.string = [NSString stringWithContentsOfFile:[Utilities LogFilePath] encoding:NSNEXTSTEPStringEncoding error:nil];
     
+}
+
+-(void)reloadContent{
+    
+    self.logTextView.string = [NSString stringWithContentsOfFile:[Utilities LogFilePath] encoding:NSNEXTSTEPStringEncoding error:nil];
+
 }
 
 -(IBAction)didClickSaveSystemInfo:(id)sender{

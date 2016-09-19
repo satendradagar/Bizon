@@ -12,4 +12,9 @@
 
 +(NSString *) LogFilePath;
 
++(BOOL)isConnected;
+
++(void)showNoInternetAlert;
+
 @end
+

@@ -17,4 +17,6 @@
 
 -(IBAction)didClickSaveLog:(id)sender;
 
+-(void)reloadContent;
+
 @end

@@ -5,9 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSPreferencePane">
+        <customObject id="-2" userLabel="File's Owner" customClass="Bizon">
             <connections>
                 <outlet property="_window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+                <outlet property="logView" destination="bUS-og-24S" id="vWI-LO-rCv"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -132,7 +133,7 @@
                                     </connections>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="Log" identifier="" id="rH6-kE-0GZ">
+                            <tabViewItem label="Log" identifier="3" id="rH6-kE-0GZ">
                                 <view key="view" id="bUS-og-24S" customClass="LogTabView">
                                     <rect key="frame" x="10" y="33" width="438" height="330"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +193,7 @@
                                     </connections>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="Support" identifier="" id="zyP-hY-2eQ">
+                            <tabViewItem label="Support" identifier="4" id="zyP-hY-2eQ">
                                 <view key="view" id="JLG-B0-dqe" customClass="SupportTabView">
                                     <rect key="frame" x="10" y="33" width="438" height="330"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,10 +235,13 @@
                                 </view>
                             </tabViewItem>
                         </tabViewItems>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="hD0-uk-3KM"/>
+                        </connections>
                     </tabView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="703" y="184.5"/>
+            <point key="canvasLocation" x="530" y="187"/>
         </window>
     </objects>
     <resources>

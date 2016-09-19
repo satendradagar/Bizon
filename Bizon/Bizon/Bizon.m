@@ -8,6 +8,10 @@
 
 #import "Bizon.h"
 #import "Reachability.h"
+#import "LogTabView.h"
+#import "ActivateTabView.h"
+#import "OverViewTabView.h"
+#import "SupportTabView.h"
 
 /*
  NSDictionary *prefs=[[NSUserDefaults standardUserDefaults]
@@ -55,13 +59,20 @@
 
 Bizon *lastLoadedInstance;
 
-@interface Bizon()
+@interface Bizon()<NSTabViewDelegate>
 
 @property (nonatomic, strong) Reachability *reachability;
+
+@property (nonatomic, strong) IBOutlet LogTabView *logView;
 
 @end
 
 @implementation Bizon
+
++(instancetype)sharedInstance{
+
+    return lastLoadedInstance;
+}
 
 - (void)mainViewDidLoad
 {
@@ -80,4 +91,12 @@ Bizon *lastLoadedInstance;
 
 }
 
+- (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(nullable NSTabViewItem *)tabViewItem{
+    
+    if ([tabViewItem.identifier isEqualToString:@"3"]) {
+        NSLog(@"< _logView >");
+        [_logView reloadContent];
+        
+    }
+}
 @end

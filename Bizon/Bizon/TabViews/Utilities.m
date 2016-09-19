@@ -7,6 +7,7 @@
 //
 
 #import "Utilities.h"
+#import "Bizon.h"
 
 @implementation Utilities
 
@@ -35,5 +36,27 @@
     return finalUrl;
 }
     
++(BOOL)isConnected{
+    
+    return [Bizon isInternetAvailable];
+}
+
+
++(void)showNoInternetAlert{
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"No Internet Connection";
+    alert.informativeText = @"Make sure you are connected to internet.In order to install packages an active internet connection is required.";
+    [alert addButtonWithTitle:@"OK"];
+    
+    
+    NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
+    NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
+    alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
+    
+    NSInteger answer = [alert runModal];
+    
+    
+}
 
 @end
