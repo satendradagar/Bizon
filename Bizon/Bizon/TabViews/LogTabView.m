@@ -7,9 +7,41 @@
 //
 
 #import "LogTabView.h"
+#import "Utilities.h"
+#import "TaskManager.h"
 
 @implementation LogTabView
 
+-(void)awakeFromNib{
+    
+    [super awakeFromNib];
+    self.logTextView.string = [NSString stringWithContentsOfFile:[Utilities LogFilePath] encoding:NSNEXTSTEPStringEncoding error:nil];
+    
+}
+
+-(IBAction)didClickSaveSystemInfo:(id)sender{
+    
+    NSString *output = nil;
+    [TaskManager runScript:@"SysInform" withArguments:nil output:&output errorDescription:nil];
+    if (nil != output) {
+        NSURL *finalUrl = [[self desktop] URLByAppendingPathComponent:@"systeminfo.txt"];
+        [output writeToURL:finalUrl atomically:YES encoding:NSNEXTSTEPStringEncoding error:nil];
+    }
+    
+    
+}
+
+-(IBAction)didClickSaveLog:(id)sender{
+    
+    NSURL *finalUrl = [[self desktop] URLByAppendingPathComponent:@"bizonboxlog.txt"];
+    [[NSFileManager defaultManager] copyItemAtURL:[NSURL URLWithString:[Utilities LogFilePath]] toURL:finalUrl error:nil];
+}
+
+-(NSURL *)desktop
+{
+    NSURL *desktop = [[[NSFileManager defaultManager] URLsForDirectory:NSDesktopDirectory inDomains:NSUserDomainMask] lastObject];
+    return desktop;
+}
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     

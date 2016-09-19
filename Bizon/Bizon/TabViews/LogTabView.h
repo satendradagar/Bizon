@@ -10,4 +10,11 @@
 
 @interface LogTabView : NSView
 
+
+@property (nonatomic, strong) IBOutlet NSTextView *logTextView;
+
+-(IBAction)didClickSaveSystemInfo:(id)sender;
+
+-(IBAction)didClickSaveLog:(id)sender;
+
 @end
