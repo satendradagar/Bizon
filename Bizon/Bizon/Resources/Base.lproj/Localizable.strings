@@ -61,8 +61,6 @@
 
 "IOPCITunnelCompatible mods done." = "IOPCITunnelCompatible mods done.";
 
-"All ready. Please restart the Mac." = "All ready. Please restart the Mac.";
-
 "4001" = "Download completed,Installing the package";
 
 "4002" = "Reinstalling the package";
@@ -79,4 +77,5 @@
 
 "4008" = "Modified package ready. Installing";
 
+"4009" = "All ready. Please restart the Mac.";
 

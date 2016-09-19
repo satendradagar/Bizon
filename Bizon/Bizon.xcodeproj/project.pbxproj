@@ -12,7 +12,6 @@
 		9A37F81C1D83D67600FD2D92 /* Bizon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F81B1D83D67600FD2D92 /* Bizon.tiff */; };
 		9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F81D1D83D67600FD2D92 /* Bizon.xib */; };
 		9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8271D83EDFF00FD2D92 /* Media.xcassets */; };
-		9A37F82A1D83F68D00FD2D92 /* BizonBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8291D83F68D00FD2D92 /* BizonBox.png */; };
 		9A37F82E1D83F96300FD2D92 /* ActivateTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A37F82C1D83F96300FD2D92 /* ActivateTabView.h */; };
 		9A37F82F1D83F96300FD2D92 /* ActivateTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A37F82D1D83F96300FD2D92 /* ActivateTabView.m */; };
 		9A37F8321D83F97900FD2D92 /* OverViewTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A37F8301D83F97900FD2D92 /* OverViewTabView.h */; };
@@ -42,6 +41,7 @@
 		9ABE5EED1D8CEABF002A54A4 /* ProgressBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */; };
 		9ABE5EEE1D8CEABF002A54A4 /* ProgressBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE5EEB1D8CEABF002A54A4 /* ProgressBarController.m */; };
 		9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE5EEC1D8CEABF002A54A4 /* ProgressBarController.xib */; };
+		9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF66D261D8FDECC00376D93 /* BizonBox.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,6 @@
 		9A37F81E1D83D67600FD2D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Bizon.xib; sourceTree = "<group>"; };
 		9A37F8201D83D67600FD2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A37F8271D83EDFF00FD2D92 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		9A37F8291D83F68D00FD2D92 /* BizonBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BizonBox.png; path = ../../../../../Desktop/LDS/Bizon/BizonBox.png; sourceTree = "<group>"; };
 		9A37F82C1D83F96300FD2D92 /* ActivateTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateTabView.h; sourceTree = "<group>"; };
 		9A37F82D1D83F96300FD2D92 /* ActivateTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateTabView.m; sourceTree = "<group>"; };
 		9A37F8301D83F97900FD2D92 /* OverViewTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewTabView.h; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarController.h; sourceTree = "<group>"; };
 		9ABE5EEB1D8CEABF002A54A4 /* ProgressBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarController.m; sourceTree = "<group>"; };
 		9ABE5EEC1D8CEABF002A54A4 /* ProgressBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarController.xib; sourceTree = "<group>"; };
+		9AF66D261D8FDECC00376D93 /* BizonBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BizonBox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 				9AA96EE31D85286200139C22 /* TaskManager */,
 				9A37F8171D83D67600FD2D92 /* Bizon.h */,
 				9A37F8191D83D67600FD2D92 /* Bizon.m */,
-				9A37F8291D83F68D00FD2D92 /* BizonBox.png */,
+				9AF66D261D8FDECC00376D93 /* BizonBox.png */,
 				9A37F81B1D83D67600FD2D92 /* Bizon.tiff */,
 				9A37F81D1D83D67600FD2D92 /* Bizon.xib */,
 				9A37F82B1D83F92F00FD2D92 /* TabViews */,
@@ -342,9 +342,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A37F82A1D83F68D00FD2D92 /* BizonBox.png in Resources */,
 				9AA96EE91D8533E600139C22 /* fullScript.sh in Resources */,
 				9AB5F0701D8E5D85002408EC /* Localizable.strings in Resources */,
+				9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */,
 				9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */,
 				9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */,
 				9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */,

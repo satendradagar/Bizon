@@ -49,6 +49,35 @@
     progressController.label.stringValue = @"Loading Script";
 }
 
+-(void)showRestartActionSheet{
+
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"Restart Your Mac";
+    alert.informativeText = @"Please note that In order to complete the installation process, you need to restart Your Mac Machine";
+    [alert addButtonWithTitle:@"Restart"];
+    
+    alert.alertStyle = NSAlertStyleInformational;
+    
+    NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
+    NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
+    alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
+    
+    NSInteger answer = [alert runModal];
+
+    if (answer == NSAlertFirstButtonReturn) {
+        
+        NSString *scriptAction = @"restart"; // @"restart"/@"shut down"/@"sleep"/@"log out"
+        NSString *scriptSource = [NSString stringWithFormat:@"tell application \"Finder\" to %@", scriptAction];
+        NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
+        NSDictionary *errDict = nil;
+        if (![appleScript executeAndReturnError:&errDict]) {
+            NSLog(@"%@", errDict); 
+        }
+        
+    }
+
+}
+
 -(void)closeSheetWithDelay{
    
     [NSApp endSheet:progressController.window];
@@ -70,6 +99,8 @@
     [TaskManager runScript:@"fullScript" withArgs:nil ResponseHandling:^(NSString *message) {
         
         progressController.label.stringValue = [self messageForServerMessage:message];
+        [weakSelf handleCriticalActions:message];
+
         
     } termination:^(STPrivilegedTask * task) {
         
@@ -88,6 +119,8 @@
         
         progressController.label.stringValue = [self messageForServerMessage:message];
 
+        [weakSelf handleCriticalActions:message];
+
     } termination:^(STPrivilegedTask * task) {
         
         [weakSelf closeSheet];
@@ -104,6 +137,7 @@
     [TaskManager runScript:@"fullScript" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
         
         progressController.label.stringValue = [self messageForServerMessage:message];
+        [weakSelf handleCriticalActions:message];
 
     } termination:^(STPrivilegedTask * task) {
         
@@ -138,7 +172,8 @@
     [TaskManager runScript:@"fullScript" withArgs:@[@"-skipdriver"] ResponseHandling:^(NSString *message) {
         
         progressController.label.stringValue = [self messageForServerMessage:message];
-        
+        [weakSelf handleCriticalActions:message];
+
     } termination:^(STPrivilegedTask * task) {
         
         [weakSelf closeSheet];
@@ -175,4 +210,16 @@
     [logFile writeData: [msg dataUsingEncoding: NSNEXTSTEPStringEncoding]];
 }
 
+-(void)handleCriticalActions:(NSString *)message{
+    
+    if ([message hasPrefix:@"4009"]) {//Restart case
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self showRestartActionSheet];
+            
+        });
+        
+    }
+}
 @end

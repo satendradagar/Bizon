@@ -832,7 +832,7 @@ function Main()
 
 	touch /System/Library/Extensions
 
-	echo "All ready. Please restart the Mac."
+	echo "4009"
 }
 
 if [[ "$first_argument" == "" || "$first_argument" == "-skipdriver" || "$first_argument" == "-url" ]]

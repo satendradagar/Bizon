@@ -34,7 +34,8 @@
 -(IBAction)didClickSaveLog:(id)sender{
     
     NSURL *finalUrl = [[self desktop] URLByAppendingPathComponent:@"bizonboxlog.txt"];
-    [[NSFileManager defaultManager] copyItemAtURL:[NSURL URLWithString:[Utilities LogFilePath]] toURL:finalUrl error:nil];
+    NSURL *sourceURL = [NSURL fileURLWithPath:[Utilities LogFilePath]];
+    [[NSFileManager defaultManager] copyItemAtURL:sourceURL toURL:finalUrl error:nil];
 }
 
 -(NSURL *)desktop
