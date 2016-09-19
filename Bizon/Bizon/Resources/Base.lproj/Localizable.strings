@@ -1,0 +1,82 @@
+/* 
+  Localization.strings
+  Bizon
+
+  Created by Satendra Singh on 17/09/16.
+  Copyright © 2016 Satendra Singh. All rights reserved.
+*/
+
+"3001" = "Missing IOPCITunnelCompatible keys.";
+
+"3002" = "No Nvidia web driver detected.";
+
+"3003" = "Controller not found.";
+
+"3004" = "Accelerator not found.";
+
+"3005" = "Driver not found. Nvidia may have changed their web driver search service.";
+
+"3006" = "Operating system id not found. Nvidia may have changed their web driver search service.";
+
+"3007" = "Operating system id found.";
+
+"3008" = "Boot into recovery partition and type: csrutil disable";
+
+"3009" = "Script doesn't support versions of OS X earlier than 10.9.5";
+
+"3010" = "Only Kepler architecture cards are supported on OS X 10.9.5.";
+
+"3011" = "Mac board-id not found.";
+
+"3012" = "Thunderbolt device is connected, but no external GPUs detected.";
+
+"3013" = "Hot-plug the Thunderbolt cable and run the script again.";
+
+"3014" = "Package name is not valid. Please check the URL address.";
+
+"3015" = "URL is empty.";
+
+"3016" = "URL doesn't exist.";
+
+"3017" = "Please install eGPUs one by one.";
+
+"3018" = "Application support path not found. Please install automate-eGPU first.";
+
+"Checking IOPCITunnelCompatible keys...\n" = "Checking IOPCITunnelCompatible keys...\n";
+
+"IOPCITunnelCompatible mods are valid." = "IOPCITunnelCompatible mods are valid.";
+"You are running official Nvidia driver." = "You are running official Nvidia driver.";
+
+"Automate-eGPU uninstall ready." = "Automate-eGPU uninstall ready.";
+
+"Board-id added." = "Board-id added.";
+
+"Your system is eGPU enabled and Nvidia web driver is up to date." = "Your system is eGPU enabled and Nvidia web driver is up to date.";
+
+"Background services unloaded." = "Background services unloaded.";
+
+"Mac board-id found." = "Mac board-id found.";
+
+"Searching for matching driver...\n" = "Searching for matching driver...\n";
+
+"IOPCITunnelCompatible mods done." = "IOPCITunnelCompatible mods done.";
+
+"All ready. Please restart the Mac." = "All ready. Please restart the Mac.";
+
+"4001" = "Download completed,Installing the package";
+
+"4002" = "Reinstalling the package";
+
+"4003" = "Download and modify the older package";
+
+"4004" = "The latest package  is already downloaded.Reinstalling";
+
+"4005" = "Downloading the latest device driver.";
+
+"4006" = "Driver downloaded.";
+
+"4007" = "Searching the latest available package.";
+
+"4008" = "Modified package ready. Installing";
+
+
