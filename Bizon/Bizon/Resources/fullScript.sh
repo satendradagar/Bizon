@@ -40,6 +40,11 @@ amd_controllers=(5000 6000 7000 8000 9000)
 config_board_ids=(42FD25EABCABB274 65CE76090165799A B809C3757DA9BB8D DB15BD556843C820 F60DEB81FF30ACF6 FA842E06C61E91C5)
 board_id=$(ioreg -c IOPlatformExpertDevice -d 2 | grep board-id | $SED "s/.*<\"\(.*\)\">.*/\1/")
 
+machine_name=$(sysctl hw.model)
+mac_fifteen=$(sysctl hw.model | grep "iMac17,1")
+mac_seventeen=$(sysctl hw.model | grep "iMac15,1")
+
+
 function GenerateDaemonPlist()
 {
 plist=`cat <<EOF
@@ -173,7 +178,7 @@ function IOPCITunnelCompatibleCheck()
 	then
 		echo "IOPCITunnelCompatible mods are valid."
 	else
-		echo "Missing IOPCITunnelCompatible keys."
+		echo "3001"
 	fi
 }
 
@@ -197,11 +202,12 @@ function InitScriptLocationAndMakeExecutable()
 
 function GeneralChecks()
 {
-	if [[ $amd == 0 ]]
+
+    if [[ $amd == 0 ]]
 	then
 		if [[ "$web_driver" == "" ]]
 		then
-			echo "No Nvidia web driver detected."
+			echo "3002"
 		else
 			if [[ $running_official == 1 ]]
 			then
@@ -342,7 +348,7 @@ function SetIOPCITunnelCompatible()
 			match_entry="IOKitPersonalities:Controller:IOPCIMatch"
 			SetIOPCIMatch
 		else
-			echo "Controller not found."
+			echo "3003"
 			exit
 		fi
 
@@ -378,7 +384,7 @@ function SetIOPCITunnelCompatible()
 
 		if [[ $accelerator_found == 0 ]]
 		then
-			echo "Accelerator not found."
+			echo "3004"
 			exit
 		fi
 	fi
@@ -424,79 +430,45 @@ function GetDownloadURL()
 			test_path=$app_support_path_nvidia"WebDriver-"$previous_installed_web_driver_version".pkg"
 			if [[ $(test -f "$test_path" && echo 1) ]]
 			then
-				echo "The latest package for ["$build_version"] is already downloaded.\nDo you want to reinstall? (y/n)"
-				read answer
-				if echo "$answer" | grep -iq "^y"
-				then
+				echo "4001"
 					reinstall=1
 					break
-				else
-					echo "Ok."
-					exit
 				fi
 			fi
 		fi
-	elif [[ "$download_version" == "" ]] || [[ "$download_url" == "" ]]
+
+    if [[ "$download_version" == "" ]] || [[ "$download_url" == "" ]]
 	then
 		echo "No web driver yet available for build ["$build_version"]."
 		test_path=$app_support_path_nvidia"WebDriver-"$previous_installed_web_driver_version".pkg"
 
 		if [[ $(test -f "$test_path" && echo 1) ]]
 		then
-			echo "This script can reinstall the package ["$previous_installed_web_driver_version"] (y/n)?"
-			read answer
-			if echo "$answer" | grep -iq "^y"
-			then
-				reinstall=1
-				break
-			else
-				echo "Ok."
-				exit
-			fi
+			echo "4002"
+            reinstall=1
+
 		elif [[ "$previous_installed_web_driver_version" != "" ]]
 		then
-			echo "This script can download and modify the older package ["$previous_installed_web_driver_version"] (y/n)?"
-			read answer
-			if echo "$answer" | grep -iq "^y"
-			then
-				break
-			else
-				echo "Ok."
-				exit
-			fi
-		else
-			exit
-		fi
-	elif [[ $running_official == 1 ]] && [[ "$download_version" != "" ]] && [[ "$previous_installed_web_driver_version" != "" ]] && [[ "$download_version" == "$previous_installed_web_driver_version" ]]
+			echo "4003"
+
+    else
+        exit
+    fi
+elif [[ $running_official == 1 ]] && [[ "$download_version" != "" ]] && [[ "$previous_installed_web_driver_version" != "" ]] && [[ "$download_version" == "$previous_installed_web_driver_version" ]]
 	then
 		test_path=$app_support_path_nvidia"WebDriver-"$previous_installed_web_driver_version".pkg"
 		if [[ $(test -f "$test_path" && echo 1) ]]
 		then
-			echo "The latest package for ["$build_version"] is already downloaded.\nDo you want to reinstall? (y/n)"
-			read answer
-			if echo "$answer" | grep -iq "^y"
-			then
-				reinstall=1
-				break
-			else
-				echo "Ok."
-				exit
-			fi
+			echo "4004"
 		fi
 	fi
 }
 
 function DoYouWantToDownloadThisDriver()
 {
-	echo "Do you want to download this driver (y/n)?"
-	read answer
-	if echo "$answer" | grep -iq "^y" ;then
+	echo "4005"
 		curl -k -o $TMPDIR"WebDriver-"$download_version".pkg" $download_url
-		echo "Driver downloaded."
-	else
-		echo "Ok."
-		exit
-	fi
+    echo "4006"
 }
 
 function GetDriverList()
@@ -521,7 +493,7 @@ function GetDriverList()
 		list=$(echo $value4 "for" $product_version "("$build_version")")
 		download_version=$value4
 	else
-		echo "Driver not found. Nvidia may have changed their web driver search service."
+		echo "3005"
 		exit
 	fi
 
@@ -548,10 +520,7 @@ function ScrapeOperatingSystemId()
 
 		if [[ ! "$previous_version_to_look_for" == "[not found]" ]]
 		then
-			echo "Would you like search the latest available package for ["$previous_version_to_look_for"] (y/n)?"
-			read answer
-			if echo "$answer" | grep -iq "^y"
-			then
+			echo "4007"
 
 			os_id=$(curl -s -H "X-Requested-With: XMLHttpRequest" "http://www.nvidia.com/Download/API/lookupValueSearch.aspx?TypeID=4&ParentID=73" \
 				| perl -pe 's/[\x0D]//g' \
@@ -559,19 +528,15 @@ function ScrapeOperatingSystemId()
 
 			if [[ ! $os_id =~ ^[-+]?[0-9]+$ ]]
 			then
-				echo "Operating system id not found. Nvidia may have changed their web driver search service."
+				echo "3006"
 				exit
 			else
-				echo "Operating system id found."
+				echo "3007"
 				break
-			fi
-			else
-				echo "Ok."
-				exit
 			fi
 		fi
 	else
-		echo "Operating system id found."
+		echo "3007"
 	fi
 }
 
@@ -682,14 +647,7 @@ function ModifyPackage()
 
 	rm -rf $TMPDIR"expanded.pkg"
 
-	echo "Modified package ready. Do you want to install (y/n)?"
-	read answer
-	if echo "$answer" | grep -iq "^y" ;then
-		break
-	else
-		echo "Ok."
-		exit
-	fi
+	echo "4008"
 }
 
 function DeduceStartup()
@@ -702,7 +660,7 @@ function DeduceStartup()
 
 	if [[ $((major_version)) -eq 10 && $(($minor_version)) -gt 10 ]] && [[ ! $(nvram csr-active-config | awk '/csr-active-config/ {print substr ($0, index ($0,$2))}') == "w%00%00%00" ]]
 	then
-		echo "Boot into recovery partition and type: csrutil disable"
+		echo "3008"
 		exit
 	fi
 
@@ -710,13 +668,13 @@ function DeduceStartup()
 	if [[ $(($major_version)) -eq 10 && $(($minor_version)) -lt 9 ]] || \
 	   [[ $(($major_version)) -eq 10 && $(($minor_version)) -eq 9 && $(($maintenance_version)) -lt 5 ]]
 	then
-		echo "Script doesn't support versions of OS X earlier than 10.9.5"
+		echo "3009"
 		exit
 	fi
 
 	if [[ $amd == 0 && $(($major_version)) -eq 10 && $(($minor_version)) -eq 9 && $(($maintenance_version)) -eq 5 ]] && [[ ! "$egpu_name" =~ "GK" ]]
 	then
-		echo "Only Kepler architecture cards are supported on OS X 10.9.5."
+		echo "3010"
 		exit
 	fi
 
@@ -765,7 +723,7 @@ function Main()
 	then
 		if [[ $board_id_exists == 0 ]]
 		then
-			echo "Mac board-id not found."
+			echo "3011"
 		else
 			echo "Mac board-id found."
 		fi
@@ -803,7 +761,7 @@ function Main()
 			then
 				ModifyPackage
 			else
-				echo "Web driver not found. Nvidia may have changed their web driver search service."
+				echo "Web 3005"
 				exit
 			fi
 		fi
@@ -881,6 +839,15 @@ if [[ "$first_argument" == "" || "$first_argument" == "-skipdriver" || "$first_a
 then
 	[ "$(id -u)" != "0" ] && echo "You must run this script with sudo." && exit
 
+
+if [[ "$mac_fifteen" != "" || "$mac_seventeen" != "" ]]
+then
+    config_board_ids=()
+    echo config_board_ids
+else
+    echo "Not a iMac"
+fi
+
  	if [[ ! $(system_profiler SPThunderboltDataType | grep 'Device connected') == "" ]]
  	then
  		DetectGPU
@@ -890,12 +857,12 @@ then
  			DetectGPU
  			if [[ "$egpu_device_id" == "" && "$egpu_vendor_id" == "" ]]
  			then
- 				echo "Thunderbolt device is connected, but no external GPUs detected."
+ 				echo "3012"
  				exit
  			fi
  		fi
  	else
- 		echo "Hot-plug the Thunderbolt cable and run the script again."
+ 		echo "3013"
  		exit
  	fi
 
@@ -905,7 +872,7 @@ then
 		then
 			web_driver_url="$second_argument"
 		else
-			echo "URL is empty."
+			echo "3015"
 			exit
 		fi
 
@@ -913,20 +880,20 @@ then
 
 		if [[ "$download_version" == "" ]]
 		then
-			echo "Package name is not valid. Please check the URL address."
+			echo "3014"
 			exit
 		fi
 
  		if [[ ! $(curl --output /dev/null --silent --head --fail "$web_driver_url" && echo 1) ]]
 		then
-			echo "URL doesn't exist."
+			echo "3016"
 			exit
 		fi
 	fi
 
 	if [[ $(echo ${#egpu_device_id}) > 4 ]]
 	then
-		echo "Please install eGPUs one by one."
+		echo "3017"
 		exit
 	fi
 
@@ -986,7 +953,7 @@ then
 
 	if [[ ! $(test -d "$app_support_path_backup"$build_version && echo 1) ]]
 	then
-		echo "Application support path not found. Please install automate-eGPU first."
+		echo "3018"
 		exit
 	fi
 
@@ -996,7 +963,6 @@ then
 	then
 		echo "Installing command line tools\n"
 		xcode-select --install
-		read -p "Please wait until Command Line Tools installation is complete and then press \"Enter\"..."
 	fi
 
 	if [[ ! $(test -d "$TMPDIR"clpeak-master && echo 1) ]]
@@ -1044,7 +1010,7 @@ then
 
 	if [[ ! $(test -d "$app_support_path_backup"$build_version && echo 1) ]]
 	then
-		echo "Application support path not found. Please install automate-eGPU first."
+		echo "3018"
 		exit
 	fi
 
@@ -1070,7 +1036,7 @@ then
 
 	if [[ ! $(test -d "$app_support_path_backup"$build_version && echo 1) ]]
 	then
-		echo "Application support path not found. Please install automate-eGPU first."
+		echo "3018"
 		exit
 	fi
 
