@@ -841,12 +841,10 @@ then
 
 
 if [[ "$mac_fifteen" != "" || "$mac_seventeen" != "" ]]
-then
-    config_board_ids=()
-    echo config_board_ids
-else
-    echo "Not a iMac"
-fi
+    then
+        config_board_ids=()
+        echo config_board_ids
+    fi
 
  	if [[ ! $(system_profiler SPThunderboltDataType | grep 'Device connected') == "" ]]
  	then

@@ -56,7 +56,6 @@
     alert.informativeText = @"Please note that In order to complete the installation process, you need to restart Your Mac Machine";
     [alert addButtonWithTitle:@"Restart"];
     
-    alert.alertStyle = NSAlertStyleInformational;
     
     NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
     NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
