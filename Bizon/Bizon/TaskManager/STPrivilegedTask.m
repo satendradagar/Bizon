@@ -134,6 +134,11 @@ OSStatus const errAuthorizationFnNoLongerExists = -70001;
 // return 0 for success
 - (OSStatus)launch
 {
+    return [self launchWithResponseHandling:nil];
+}
+
+- (OSStatus)launchWithResponseHandling:(void (^)(NSString *message)) responseBlock
+{
     OSStatus err = noErr;
     const char *toolPath = [self.launchPath fileSystemRepresentation];
     
@@ -228,8 +233,14 @@ OSStatus const errAuthorizationFnNoLongerExists = -70001;
     _processIdentifier = fcntl(fileno(outputFile), F_GETOWN, 0);
     [_outputFileHandle  setReadabilityHandler:^(NSFileHandle *file) {
         NSData *data = [file availableData]; // this will read to EOF, so call only once
-        NSLog(@"+++++++Task output! \n%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-        
+        NSString *received = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"+++++++Task output! \n%@", received);
+       
+        if (nil != responseBlock) {
+
+            responseBlock(received);
+
+        }
             // if you're collecting the whole output of a task, you may store it on a property
             //maybe you want to appenddata
             //[weakself.taskOutput appendData:data];
@@ -269,6 +280,8 @@ OSStatus const errAuthorizationFnNoLongerExists = -70001;
             _terminationHandler(self);
         }
     }
+
+
 }
 
 #pragma mark -
