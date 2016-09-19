@@ -8,89 +8,171 @@
 
 #import "ActivateTabView.h"
 #import "TaskManager.h"
+#import "ProgressBarController.h"
+#import "Utilities.h"
 
 @implementation ActivateTabView
+{
 
+    __block ProgressBarController *progressController;
+    NSFileHandle *logFile ;
+
+}
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
     // Drawing code here.
 }
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    
+    logFile = [NSFileHandle fileHandleForWritingAtPath:[Utilities LogFilePath]];
+
+}
+
+    
+    
+    
+-(void)showActionSheet{
+    
+    progressController = [[ProgressBarController alloc] initWithWindowNibName:@"ProgressBarController"];
+    
+    [[progressController window] center];
+    [NSApp beginSheet:progressController.window
+       modalForWindow:self.window
+        modalDelegate:nil
+       didEndSelector:NULL
+          contextInfo:NULL];
+    [progressController.window makeKeyWindow];
+    [progressController.window orderFront:nil];
+    progressController.label.stringValue = @"Loading Script";
+}
+
+-(void)closeSheetWithDelay{
+   
+    [NSApp endSheet:progressController.window];
+    [progressController.window orderOut:self];
+    
+}
+
+-(void)closeSheet
+{
+    [self performSelector:@selector(closeSheetWithDelay) withObject:nil afterDelay:5.0];
+}
 
 -(IBAction)didClickActivate:(id)sender{
     
     NSLog(@"didClickActivate");
-    [TaskManager runScript:@"fullScript" withArgs:nil];
+    __block typeof(self) weakSelf = self;
+    [self showActionSheet];
     
-    return;
-
-    NSString * output = nil;
-    NSString * processErrorDescription = nil;
-    [TaskManager runScriptAsAdministrator:@"fullScript" withArguments:nil output:&output errorDescription:&processErrorDescription];
-    BOOL success =[TaskManager runScriptAsAdministrator:@"fullScript" withArguments:nil output:&output errorDescription:&processErrorDescription];
+    [TaskManager runScript:@"fullScript" withArgs:nil ResponseHandling:^(NSString *message) {
+        
+        progressController.label.stringValue = [self messageForServerMessage:message];
+        
+    } termination:^(STPrivilegedTask * task) {
+        
+        [weakSelf closeSheet];
+        
+    }] ;
     
-    NSLog(@"[%d]output = %@",success,output);
-    NSLog(@"Error = %@",processErrorDescription);
-    
-    if (!success) // Process failed to run
-        {
-            // ...look at errorDescription
-        }
-    else
-        {
-            // ...process output
-        }
-
 }
 
 -(IBAction)didClickRestore:(id)sender{
 
-    [TaskManager runScript:@"fullScript" withArgs:@[@"-uninstall"]];
-    return;
+    __block typeof(self) weakSelf = self;
+    [self showActionSheet];
     
-    
-    NSString * output = nil;
-    NSString * processErrorDescription = nil;
-    [TaskManager runScriptAsAdministrator:@"fullScript" withArguments:@[@"-uninstall"] output:&output errorDescription:&processErrorDescription];
-    BOOL success =[TaskManager runScriptAsAdministrator:@"fullScript" withArguments:nil output:&output errorDescription:&processErrorDescription];
-    
-    NSLog(@"[%d]output = %@",success,output);
-    NSLog(@"Error = %@",processErrorDescription);
-    
-    if (!success) // Process failed to run
-        {
-            // ...look at errorDescription
-        }
-    else
-        {
-            // ...process output
-        }
+    [TaskManager runScript:@"fullScript" withArgs:@[@"-uninstall"] ResponseHandling:^(NSString *message) {
+        
+        progressController.label.stringValue = [self messageForServerMessage:message];
 
+    } termination:^(STPrivilegedTask * task) {
+        
+        [weakSelf closeSheet];
+
+    }] ;
+    
 }
 
 -(IBAction)didClickAuto:(id)sender{
     
-    [TaskManager runScript:@"fullScript" withArgs:@[@"-a"]];
-    return;
+    __block typeof(self) weakSelf = self;
+    [self showActionSheet];
+
+    [TaskManager runScript:@"fullScript" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
+        
+        progressController.label.stringValue = [self messageForServerMessage:message];
+
+    } termination:^(STPrivilegedTask * task) {
+        
+        [weakSelf closeSheet];
+
+    }] ;
     
-    NSString * output = nil;
-    NSString * processErrorDescription = nil;
-    [TaskManager runScriptAsAdministrator:@"fullScript" withArguments:nil output:&output errorDescription:&processErrorDescription];
-    BOOL success =[TaskManager runScriptAsAdministrator:@"fullScript" withArguments:@[@"-a"] output:&output errorDescription:&processErrorDescription];
+//    NSString * output = nil;
+//    NSString * processErrorDescription = nil;
+//    [TaskManager runScriptAsAdministrator:@"fullScript" withArguments:nil output:&output errorDescription:&processErrorDescription];
+//    BOOL success =[TaskManager runScriptAsAdministrator:@"fullScript" withArguments:@[@"-a"] output:&output errorDescription:&processErrorDescription];
+//    
+//    NSLog(@"[%d]output = %@",success,output);
+//    NSLog(@"Error = %@",processErrorDescription);
+//    
+//    if (!success) // Process failed to run
+//        {
+//            // ...look at errorDescription
+//        }
+//    else
+//        {
+//            // ...process output
+//        }
+//
+}
+
+-(IBAction)didClickSkip:(id)sender{
     
-    NSLog(@"[%d]output = %@",success,output);
-    NSLog(@"Error = %@",processErrorDescription);
+    __block typeof(self) weakSelf = self;
+    [self showActionSheet];
     
-    if (!success) // Process failed to run
-        {
-            // ...look at errorDescription
-        }
-    else
-        {
-            // ...process output
+    [TaskManager runScript:@"fullScript" withArgs:@[@"-skipdriver"] ResponseHandling:^(NSString *message) {
+        
+        progressController.label.stringValue = [self messageForServerMessage:message];
+        
+    } termination:^(STPrivilegedTask * task) {
+        
+        [weakSelf closeSheet];
+        
+    }] ;
+    
+
+}
+
+- (NSString *)messageForServerMessage:(NSString *)msg
+{
+  
+    if (msg.length) {
+        
+        NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
+        NSString *panelMsg = [msg substringToIndex:msg.length - 1];
+        NSString *localized = NSLocalizedStringFromTableInBundle(panelMsg, @"Localizable", bundle, nil);
+//        NSString *localized = NSLocalizedString([msg substringToIndex:msg.length - 1],nil);
+        
+        NSLog(@"%@:%@",panelMsg ,localized);
+        if (nil != localized) {
+            [self LogMessage:[NSString stringWithFormat:@"\n%@ <%@: %@>",[[NSDate date] descriptionWithLocale:[NSLocale currentLocale]],panelMsg,localized]];
+            return localized;
         }
 
+    }
+    [self LogMessage:[NSString stringWithFormat:@"\n%@ <%@>",[[NSDate date] descriptionWithLocale:[NSLocale currentLocale]],msg]];
+
+    return msg;
+}
+    
+-(void)LogMessage:(NSString *)msg
+{
+    [logFile writeData: [msg dataUsingEncoding: NSNEXTSTEPStringEncoding]];
 }
 
 @end

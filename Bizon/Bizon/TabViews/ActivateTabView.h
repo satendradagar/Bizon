@@ -16,4 +16,6 @@
 
 -(IBAction)didClickAuto:(id)sender;
 
+-(IBAction)didClickSkip:(id)sender;
+
 @end
