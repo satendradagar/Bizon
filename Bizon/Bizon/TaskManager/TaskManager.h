@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "STPrivilegedTask.h"
 
 @interface TaskManager : NSObject
 
-+ (void ) runScript:(NSString *) scriptName withArgs:(NSArray *)args;
++ (void ) runScript:(NSString *) scriptName withArgs:(NSArray *)args ResponseHandling:(void (^)(NSString *message)) responseBlock termination: (void (^)(STPrivilegedTask *)) terminate;
 
-+ (BOOL) runScriptAsAdministrator:(NSString*)scriptName
++ (BOOL) runScript:(NSString*)scriptName
                     withArguments:(NSArray *)arguments
                            output:(NSString **)output
                  errorDescription:(NSString **)errorDescription;

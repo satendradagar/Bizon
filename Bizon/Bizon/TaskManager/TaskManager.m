@@ -12,23 +12,24 @@
 @implementation TaskManager
 
 
-+ (void ) runScript:(NSString *) scriptName withArgs:(NSArray *)args{
++ (void ) runScript:(NSString *) scriptName withArgs:(NSArray *)args ResponseHandling:(void (^)(NSString *message)) responseBlock termination: (void (^)(STPrivilegedTask *)) terminate{
 
     __block NSPipe *outPipe = [NSPipe pipe];
     NSString  * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:scriptName ofType:@"sh"];
     STPrivilegedTask * hiddenTask = [STPrivilegedTask new];
     [hiddenTask setLaunchPath:@"/bin/sh"];
     [hiddenTask setCurrentDirectoryPath:[[NSBundle bundleForClass:[self class]] resourcePath]];
-
+    
     NSMutableArray *totalArgs = [NSMutableArray arrayWithObjects:scriptPath, nil];
     if (nil != args) {
         
         [totalArgs addObjectsFromArray:args];
 
     }
+    [hiddenTask setTerminationHandler:terminate];
     [hiddenTask setArguments:totalArgs];
         //set it off
-    OSStatus err = [hiddenTask launch];
+    OSStatus err = [hiddenTask launchWithResponseHandling:responseBlock];
     if (err != errAuthorizationSuccess) {
         if (err == errAuthorizationCanceled) {
             NSLog(@"User cancelled");
@@ -96,18 +97,22 @@
     
 }
 
-+ (BOOL) runScriptAsAdministrator:(NSString*)scriptName
++ (BOOL) runScript:(NSString*)scriptName
                      withArguments:(NSArray *)arguments
                             output:(NSString **)output
                   errorDescription:(NSString **)errorDescription {
     
     NSString  * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:scriptName ofType:@"sh"];
 
-    NSString * allArgs = [arguments componentsJoinedByString:@" "];
-    NSString * fullScript = [NSString stringWithFormat:@"'%@' %@", scriptPath, allArgs?allArgs:@""];
-    
+    NSString * fullScript = scriptPath;
+    if (arguments.count) {
+     
+        NSString * allArgs = [arguments componentsJoinedByString:@" "];
+        fullScript = [NSString stringWithFormat:@"'%@' %@", scriptPath, allArgs?allArgs:@""];
+        
+    }
     NSDictionary *errorInfo = [NSDictionary new];
-    NSString *script =  [NSString stringWithFormat:@"do shell script \"%@\" with administrator privileges", fullScript];
+    NSString *script =  [NSString stringWithFormat:@"do shell script \"'%@'\" ", fullScript];
     
     NSAppleScript *appleScript = [[NSAppleScript new] initWithSource:script];
     NSAppleEventDescriptor * eventResult = [appleScript executeAndReturnError:&errorInfo];
@@ -116,7 +121,7 @@
     if (! eventResult)
         {
             // Describe common errors
-        *errorDescription = nil;
+        errorDescription = nil;
         if ([errorInfo valueForKey:NSAppleScriptErrorNumber])
             {
             NSNumber * errorNumber = (NSNumber *)[errorInfo valueForKey:NSAppleScriptErrorNumber];
