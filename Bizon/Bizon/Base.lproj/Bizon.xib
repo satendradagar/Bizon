@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSPreferencePane">
@@ -15,19 +15,19 @@
         <window title="≪ do not localize ≫" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5" userLabel="PrefPane">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="487" y="240" width="668" height="368"/>
+            <rect key="contentRect" x="487" y="240" width="682" height="399"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="668" height="368"/>
+            <view key="contentView" misplaced="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="682" height="399"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kJl-z7-AG9">
-                        <rect key="frame" x="13" y="148" width="197" height="170"/>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="kJl-z7-AG9">
+                        <rect key="frame" x="13" y="159" width="197" height="170"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="PaneIcon" id="z3J-cW-CGY"/>
                     </imageView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="inJ-iw-fVk">
-                        <rect key="frame" x="3" y="49" width="217" height="79"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="inJ-iw-fVk">
+                        <rect key="frame" x="3" y="60" width="217" height="79"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="BIZON BOX Device Manager" id="uMv-v6-Mov">
                             <font key="font" metaFont="system" size="26"/>
@@ -35,10 +35,10 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <tabView initialItem="n7J-gX-jjX" id="0L7-PO-Z2K">
-                        <rect key="frame" x="211" y="-2" width="458" height="376"/>
+                    <tabView misplaced="YES" initialItem="n7J-gX-jjX" id="0L7-PO-Z2K">
+                        <rect key="frame" x="211" y="9" width="458" height="376"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menuBar"/>
                         <tabViewItems>
                             <tabViewItem label="Activate" identifier="1" id="n7J-gX-jjX">
                                 <view key="view" id="9GK-ts-0mK" customClass="ActivateTabView">
@@ -54,8 +54,19 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button verticalHuggingPriority="750" id="gqe-cA-eL6">
-                                            <rect key="frame" x="17" y="25" width="143" height="32"/>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="sGN-AF-iYZ">
+                                            <rect key="frame" x="115" y="189" width="209" height="68"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="smallSquare" title="Activate" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KBk-1k-0JX">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system" size="29"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="didClickActivate:" target="9GK-ts-0mK" id="skc-Mx-dqy"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="gqe-cA-eL6">
+                                            <rect key="frame" x="148" y="86" width="143" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="smallSquare" title="Restore" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pX9-iS-JtQ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -65,8 +76,19 @@
                                                 <action selector="didClickRestore:" target="9GK-ts-0mK" id="ayX-eg-WTX"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" id="sRC-qL-gaL">
-                                            <rect key="frame" x="285" y="25" width="136" height="32"/>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="mCc-2z-6DU">
+                                            <rect key="frame" x="148" y="36" width="143" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="smallSquare" title="Skip" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JcP-fn-1hw">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="didClickSkip:" target="9GK-ts-0mK" id="ft2-DQ-Rvw"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="sRC-qL-gaL">
+                                            <rect key="frame" x="148" y="136" width="143" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="smallSquare" title="Auto" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tY1-5W-lth">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -74,17 +96,6 @@
                                             </buttonCell>
                                             <connections>
                                                 <action selector="didClickAuto:" target="9GK-ts-0mK" id="8KB-uK-lh7"/>
-                                            </connections>
-                                        </button>
-                                        <button verticalHuggingPriority="750" id="sGN-AF-iYZ">
-                                            <rect key="frame" x="115" y="160" width="209" height="68"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Activate" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KBk-1k-0JX">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system" size="29"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="didClickActivate:" target="9GK-ts-0mK" id="skc-Mx-dqy"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -99,7 +110,7 @@
                                             <rect key="frame" x="15" y="71" width="408" height="228"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="BIZON BOX Status:" id="q00-HU-1pM">
-                                                <font key="font" metaFont="system" size="25"/>
+                                                <font key="font" metaFont="system" size="18"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -125,6 +136,60 @@
                                 <view key="view" id="bUS-og-24S" customClass="LogTabView">
                                     <rect key="frame" x="10" y="33" width="438" height="330"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="3uo-fS-V8g">
+                                            <rect key="frame" x="11" y="1" width="96" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Save Log" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Erk-GU-5fT">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="didClickSaveLog:" target="bUS-og-24S" id="d8o-BQ-KH0"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="Shh-uC-62X">
+                                            <rect key="frame" x="11" y="34" width="191" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Save System Information" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Chy-SW-fFP">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="didClickSaveSystemInfo:" target="bUS-og-24S" id="Ssq-kS-GIX"/>
+                                            </connections>
+                                        </button>
+                                        <scrollView misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="tT4-nb-5QE">
+                                            <rect key="frame" x="17" y="82" width="404" height="245"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <clipView key="contentView" id="hQL-Vr-Blu">
+                                                <rect key="frame" x="1" y="1" width="402" height="243"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="FjM-CI-M3U">
+                                                        <rect key="frame" x="0.0" y="0.0" width="402" height="243"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="minSize" width="402" height="243"/>
+                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="ZKt-I1-eya">
+                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="LAq-ac-OES">
+                                                <rect key="frame" x="387" y="1" width="16" height="243"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="logTextView" destination="FjM-CI-M3U" id="TJ4-iy-a8k"/>
+                                    </connections>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Support" identifier="" id="zyP-hY-2eQ">
@@ -132,10 +197,10 @@
                                     <rect key="frame" x="10" y="33" width="438" height="330"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" id="EAB-o6-dBV">
-                                            <rect key="frame" x="115" y="224" width="209" height="32"/>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="EAB-o6-dBV">
+                                            <rect key="frame" x="155" y="189" width="129" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="User Manual" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XjD-sX-8MG">
+                                            <buttonCell key="cell" type="smallSquare" title="User Manual" bezelStyle="smallSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="XjD-sX-8MG">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -143,10 +208,10 @@
                                                 <action selector="didClickShowUserManual:" target="JLG-B0-dqe" id="Wbw-fm-jdN"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" id="JKU-tN-7xo">
-                                            <rect key="frame" x="115" y="154" width="209" height="32"/>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="JKU-tN-7xo">
+                                            <rect key="frame" x="155" y="149" width="129" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Knowledge Base" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BUc-VU-W9e">
+                                            <buttonCell key="cell" type="smallSquare" title="Knowledge Base" bezelStyle="smallSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="BUc-VU-W9e">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -154,10 +219,10 @@
                                                 <action selector="didClickKnowledgeBase:" target="JLG-B0-dqe" id="LCr-zD-GIO"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" id="rnO-zI-sTx">
-                                            <rect key="frame" x="115" y="84" width="209" height="32"/>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="rnO-zI-sTx">
+                                            <rect key="frame" x="155" y="109" width="129" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Support Ticket" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ApG-xP-jVZ">
+                                            <buttonCell key="cell" type="smallSquare" title="Support Ticket" bezelStyle="smallSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="ApG-xP-jVZ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -172,10 +237,11 @@
                     </tabView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="634" y="264"/>
+            <point key="canvasLocation" x="703" y="184.5"/>
         </window>
     </objects>
     <resources>
-        <image name="PaneIcon" width="999" height="860"/>
+        <image name="NSFollowLinkFreestandingTemplate" width="14" height="14"/>
+        <image name="PaneIcon" width="1997" height="1720"/>
     </resources>
 </document>

@@ -29,11 +29,19 @@
 		9A37F8611D84331B00FD2D92 /* Bizon.prefPane in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A37F8141D83D67600FD2D92 /* Bizon.prefPane */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9A4AB6A81D86857200783155 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4AB6A61D86857200783155 /* Reachability.h */; };
 		9A4AB6A91D86857200783155 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AB6A71D86857200783155 /* Reachability.m */; };
+		9A9371D61D8EDF3E00FC263C /* SysInform.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9A9371D51D8EDF3E00FC263C /* SysInform.sh */; };
 		9AA96EE61D85287900139C22 /* TaskManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EE41D85287900139C22 /* TaskManager.h */; };
 		9AA96EE71D85287900139C22 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96EE51D85287900139C22 /* TaskManager.m */; };
 		9AA96EE91D8533E600139C22 /* fullScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96EE81D8533E600139C22 /* fullScript.sh */; };
 		9AA96EEC1D854C3E00139C22 /* STPrivilegedTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */; };
 		9AA96EED1D854C3E00139C22 /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */; };
+		9AB5F0701D8E5D85002408EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB5F0721D8E5D85002408EC /* Localizable.strings */; };
+		9AB5F0731D8E5DA2002408EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB5F0721D8E5D85002408EC /* Localizable.strings */; };
+		9AB5F0771D8E752D002408EC /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AB5F0751D8E752D002408EC /* Utilities.h */; };
+		9AB5F0781D8E752D002408EC /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB5F0761D8E752D002408EC /* Utilities.m */; };
+		9ABE5EED1D8CEABF002A54A4 /* ProgressBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */; };
+		9ABE5EEE1D8CEABF002A54A4 /* ProgressBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE5EEB1D8CEABF002A54A4 /* ProgressBarController.m */; };
+		9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE5EEC1D8CEABF002A54A4 /* ProgressBarController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,11 +93,19 @@
 		9A37F84D1D8420D000FD2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4AB6A61D86857200783155 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9A4AB6A71D86857200783155 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9A9371D51D8EDF3E00FC263C /* SysInform.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = SysInform.sh; sourceTree = "<group>"; };
 		9AA96EE41D85287900139C22 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
 		9AA96EE51D85287900139C22 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
 		9AA96EE81D8533E600139C22 /* fullScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fullScript.sh; sourceTree = "<group>"; };
 		9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
 		9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
+		9AB5F0711D8E5D85002408EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9AB5F0741D8E5EB0002408EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9AB5F0751D8E752D002408EC /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		9AB5F0761D8E752D002408EC /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarController.h; sourceTree = "<group>"; };
+		9ABE5EEB1D8CEABF002A54A4 /* ProgressBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarController.m; sourceTree = "<group>"; };
+		9ABE5EEC1D8CEABF002A54A4 /* ProgressBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +147,7 @@
 		9A37F8161D83D67600FD2D92 /* Bizon */ = {
 			isa = PBXGroup;
 			children = (
+				9ABE5EE91D8CEABF002A54A4 /* ProgressBar */,
 				9A4AB6A51D86857200783155 /* Reachability */,
 				9AA96EE31D85286200139C22 /* TaskManager */,
 				9A37F8171D83D67600FD2D92 /* Bizon.h */,
@@ -148,8 +165,10 @@
 		9A37F8261D83EDA000FD2D92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A9371D51D8EDF3E00FC263C /* SysInform.sh */,
 				9AA96EE81D8533E600139C22 /* fullScript.sh */,
 				9A37F8271D83EDFF00FD2D92 /* Media.xcassets */,
+				9AB5F0721D8E5D85002408EC /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -165,6 +184,8 @@
 				9A37F8351D83F99100FD2D92 /* LogTabView.m */,
 				9A37F8381D83F9AC00FD2D92 /* SupportTabView.h */,
 				9A37F8391D83F9AC00FD2D92 /* SupportTabView.m */,
+				9AB5F0751D8E752D002408EC /* Utilities.h */,
+				9AB5F0761D8E752D002408EC /* Utilities.m */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -210,6 +231,16 @@
 			path = TaskManager;
 			sourceTree = "<group>";
 		};
+		9ABE5EE91D8CEABF002A54A4 /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */,
+				9ABE5EEB1D8CEABF002A54A4 /* ProgressBarController.m */,
+				9ABE5EEC1D8CEABF002A54A4 /* ProgressBarController.xib */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -219,12 +250,14 @@
 			files = (
 				9A37F8321D83F97900FD2D92 /* OverViewTabView.h in Headers */,
 				9AA96EE61D85287900139C22 /* TaskManager.h in Headers */,
+				9ABE5EED1D8CEABF002A54A4 /* ProgressBarController.h in Headers */,
 				9AA96EEC1D854C3E00139C22 /* STPrivilegedTask.h in Headers */,
 				9A37F82E1D83F96300FD2D92 /* ActivateTabView.h in Headers */,
 				9A37F8361D83F99100FD2D92 /* LogTabView.h in Headers */,
 				9A4AB6A81D86857200783155 /* Reachability.h in Headers */,
 				9A37F83A1D83F9AC00FD2D92 /* SupportTabView.h in Headers */,
 				9A37F8181D83D67600FD2D92 /* Bizon.h in Headers */,
+				9AB5F0771D8E752D002408EC /* Utilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +344,12 @@
 			files = (
 				9A37F82A1D83F68D00FD2D92 /* BizonBox.png in Resources */,
 				9AA96EE91D8533E600139C22 /* fullScript.sh in Resources */,
+				9AB5F0701D8E5D85002408EC /* Localizable.strings in Resources */,
+				9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */,
 				9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */,
 				9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */,
 				9A37F81C1D83D67600FD2D92 /* Bizon.tiff in Resources */,
+				9A9371D61D8EDF3E00FC263C /* SysInform.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A37F8491D8420D000FD2D92 /* Assets.xcassets in Resources */,
+				9AB5F0731D8E5DA2002408EC /* Localizable.strings in Resources */,
 				9A37F8571D8422D200FD2D92 /* Media.xcassets in Resources */,
 				9A37F84C1D8420D000FD2D92 /* MainMenu.xib in Resources */,
 			);
@@ -338,7 +375,9 @@
 				9A37F81A1D83D67600FD2D92 /* Bizon.m in Sources */,
 				9A4AB6A91D86857200783155 /* Reachability.m in Sources */,
 				9A37F82F1D83F96300FD2D92 /* ActivateTabView.m in Sources */,
+				9AB5F0781D8E752D002408EC /* Utilities.m in Sources */,
 				9A37F83B1D83F9AC00FD2D92 /* SupportTabView.m in Sources */,
+				9ABE5EEE1D8CEABF002A54A4 /* ProgressBarController.m in Sources */,
 				9AA96EE71D85287900139C22 /* TaskManager.m in Sources */,
 				9AA96EED1D854C3E00139C22 /* STPrivilegedTask.m in Sources */,
 				9A37F8371D83F99100FD2D92 /* LogTabView.m in Sources */,
@@ -379,6 +418,15 @@
 				9A37F84B1D8420D000FD2D92 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9AB5F0721D8E5D85002408EC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AB5F0711D8E5D85002408EC /* Base */,
+				9AB5F0741D8E5EB0002408EC /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
