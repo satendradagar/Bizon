@@ -199,7 +199,7 @@
 
 -(void)handleCriticalActions:(NSString *)message{
     
-    message = [message copy];
+    message = [NSString stringWithFormat:@"%@",message];
     if ([message hasPrefix:@"4009"]) {//Restart case
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -210,31 +210,38 @@
         
     }
     else{
-        dispatch_async(dispatch_get_main_queue(), ^{
 
             NSUInteger msgValue = [message integerValue];
             if (msgValue > 3000 && msgValue < 4000) {//warning
                 
                 NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
                 if (nil != localized) {
-                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
+                        
+                    });
+   
                 }
-                progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
 
                 progressController.warningImage.hidden = NO;
             }
             else{
                 
+                progressController.warningImage.hidden = YES;
+
                 NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
                 if (nil != localized) {
-                    progressController.label.stringValue = localized;
+                    dispatch_async(dispatch_get_main_queue(), ^{
 
+                    progressController.label.stringValue = localized;
+                        
+                    });
                 }
 
             }
             NSLog(@"MSG INT:%lu",(unsigned long)msgValue);
 
-        });
     }
     
     
