@@ -186,7 +186,7 @@
 
     }
     
-    return @"";
+    return nil;
 }
     
 -(void)LogMessage:(NSString *)msg

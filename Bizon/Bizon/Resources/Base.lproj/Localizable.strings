@@ -26,7 +26,7 @@
 
 "3010" = "Only Kepler architecture cards are supported on OS X 10.9.5.";
 
-"3011" = "Mac board-id not found.";
+"3011" = "Looking for Driver...";
 
 "3012" = "Thunderbolt device is connected, but no external GPUs detected.";
 
@@ -57,7 +57,7 @@
 
 //"Mac board-id found." = "Mac board-id found.";
 
-"Searching for matching driver...\n" = "Looking for Driver...\n";
+//"Searching for matching driver...\n" = "Looking for Driver...\n";
 
     //"IOPCITunnelCompatible mods done." = "IOPCITunnelCompatible mods done.";
 
