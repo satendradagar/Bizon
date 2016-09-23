@@ -10,7 +10,13 @@
 
 @interface OverViewTabView : NSView
 
-@property (nonatomic, weak) IBOutlet NSTextField *overViewDetails;
+@property (nonatomic, weak) IBOutlet NSTextField *connectionState;
+
+@property (nonatomic, weak) IBOutlet NSTextField *graphicsCard;
+
+@property (nonatomic, weak) IBOutlet NSTextField *macVersion;
+
+@property (nonatomic, weak) IBOutlet NSTextField *macModel;
 
 -(IBAction)didClickRefreshDetails:(id)sender;
 

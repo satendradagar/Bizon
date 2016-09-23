@@ -16,5 +16,7 @@
 
 +(void)showNoInternetAlert;
 
++ (NSURL *)applicationDocumentsDirectory;
+
 @end
 

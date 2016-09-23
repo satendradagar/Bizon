@@ -28,8 +28,11 @@
  Graphics card: NVIDIA GTX xxx OS X Version: xxxx (
  Mac: xxxx (MacBook Mid-2014)
  */
-    NSString *finalDetails = [NSString stringWithFormat:@"BIZON BOX Status  %@\nGraphics card   %@\nOS X Version    %@\nModel   Mac %@",/* DISABLES CODE */ (1)?@"Connected":@"Not Connected",[OverViewTabView videoCardInfo],[OverViewTabView osVersion],[OverViewTabView macModelName]];
-    self.overViewDetails.stringValue = finalDetails;
+//    NSString *finalDetails = [NSString stringWithFormat:@"BIZON BOX Status  %@\nGraphics card   %@\nOS X Version    %@\nModel   Mac %@",/* DISABLES CODE */ (1)?@"Connected":@"Not Connected",[OverViewTabView videoCardInfo],[OverViewTabView osVersion],[OverViewTabView macModelName]];
+    self.connectionState.stringValue = (1)?@"Connected":@"Not Connected";
+    self.graphicsCard.stringValue = [OverViewTabView videoCardInfo];
+    self.macVersion.stringValue = [OverViewTabView osVersion];
+    self.macModel.stringValue = [OverViewTabView macModelName];
     
 }
 

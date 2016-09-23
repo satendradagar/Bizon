@@ -12,6 +12,7 @@
 #import "ActivateTabView.h"
 #import "OverViewTabView.h"
 #import "SupportTabView.h"
+#import "BizonSecurityManager.h"
 
 /*
  NSDictionary *prefs=[[NSUserDefaults standardUserDefaults]
@@ -99,4 +100,18 @@ Bizon *lastLoadedInstance;
         
     }
 }
+
+- (void) didSelect{
+    NSLog(@"didSelect");
+    [BizonSecurityManager startAccess];
+    
+}
+- (void) willUnselect{
+
+    [BizonSecurityManager stopAccess];
+
+    NSLog(@"willUnselect");
+    
+}
+
 @end

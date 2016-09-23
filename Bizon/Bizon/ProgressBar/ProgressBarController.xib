@@ -10,6 +10,7 @@
                 <outlet property="cancelButton" destination="Yi9-Ka-aI5" id="GyQ-Ba-qNA"/>
                 <outlet property="label" destination="aTX-Ty-7Hf" id="lmM-jU-B4W"/>
                 <outlet property="progressBar" destination="7wl-N0-wCz" id="xdz-1f-Lq0"/>
+                <outlet property="warningImage" destination="goD-JZ-lMT" id="pBw-gB-NoT"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -27,8 +28,8 @@
                         <rect key="frame" x="20" y="53" width="440" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="aTX-Ty-7Hf">
-                        <rect key="frame" x="18" y="29" width="444" height="17"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="aTX-Ty-7Hf">
+                        <rect key="frame" x="46" y="29" width="389" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" id="px2-td-21x">
                             <font key="font" metaFont="system"/>
@@ -49,6 +50,11 @@
                             <action selector="userDidClicCancel:" target="-2" id="Idi-Xa-2Jw"/>
                         </connections>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="goD-JZ-lMT">
+                        <rect key="frame" x="0.0" y="4" width="48" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSCaution" id="R52-yQ-Zyt"/>
+                    </imageView>
                 </subviews>
             </view>
             <connections>
@@ -57,4 +63,7 @@
             <point key="canvasLocation" x="46" y="60"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSCaution" width="32" height="32"/>
+    </resources>
 </document>

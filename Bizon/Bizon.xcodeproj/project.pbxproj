@@ -28,10 +28,10 @@
 		9A37F8611D84331B00FD2D92 /* Bizon.prefPane in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A37F8141D83D67600FD2D92 /* Bizon.prefPane */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9A4AB6A81D86857200783155 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4AB6A61D86857200783155 /* Reachability.h */; };
 		9A4AB6A91D86857200783155 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AB6A71D86857200783155 /* Reachability.m */; };
-		9A9371D61D8EDF3E00FC263C /* SysInform.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9A9371D51D8EDF3E00FC263C /* SysInform.sh */; };
+		9A7B0B761D94F36800652E8C /* fullScript.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9A7B0B741D94F36800652E8C /* fullScript.dump */; };
+		9A7B0B771D94F36800652E8C /* SysInform.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9A7B0B751D94F36800652E8C /* SysInform.dump */; };
 		9AA96EE61D85287900139C22 /* TaskManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EE41D85287900139C22 /* TaskManager.h */; };
 		9AA96EE71D85287900139C22 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96EE51D85287900139C22 /* TaskManager.m */; };
-		9AA96EE91D8533E600139C22 /* fullScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96EE81D8533E600139C22 /* fullScript.sh */; };
 		9AA96EEC1D854C3E00139C22 /* STPrivilegedTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */; };
 		9AA96EED1D854C3E00139C22 /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */; };
 		9AB5F0701D8E5D85002408EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB5F0721D8E5D85002408EC /* Localizable.strings */; };
@@ -41,6 +41,16 @@
 		9ABE5EED1D8CEABF002A54A4 /* ProgressBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */; };
 		9ABE5EEE1D8CEABF002A54A4 /* ProgressBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE5EEB1D8CEABF002A54A4 /* ProgressBarController.m */; };
 		9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE5EEC1D8CEABF002A54A4 /* ProgressBarController.xib */; };
+		9ABFE8F91D94E96F0036E94B /* AESCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFE8EE1D94E96F0036E94B /* AESCrypt.h */; };
+		9ABFE8FA1D94E96F0036E94B /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFE8EF1D94E96F0036E94B /* AESCrypt.m */; };
+		9ABFE8FC1D94E96F0036E94B /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFE8F11D94E96F0036E94B /* NSData+Base64.h */; };
+		9ABFE8FD1D94E96F0036E94B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFE8F21D94E96F0036E94B /* NSData+Base64.m */; };
+		9ABFE8FE1D94E96F0036E94B /* NSData+CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFE8F31D94E96F0036E94B /* NSData+CommonCrypto.h */; };
+		9ABFE8FF1D94E96F0036E94B /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFE8F41D94E96F0036E94B /* NSData+CommonCrypto.m */; };
+		9ABFE9001D94E96F0036E94B /* NSString+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFE8F51D94E96F0036E94B /* NSString+Base64.h */; };
+		9ABFE9011D94E96F0036E94B /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFE8F61D94E96F0036E94B /* NSString+Base64.m */; };
+		9ABFE9051D94EA700036E94B /* BizonSecurityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFE9031D94EA700036E94B /* BizonSecurityManager.h */; };
+		9ABFE9061D94EA700036E94B /* BizonSecurityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFE9041D94EA700036E94B /* BizonSecurityManager.m */; };
 		9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF66D261D8FDECC00376D93 /* BizonBox.png */; };
 /* End PBXBuildFile section */
 
@@ -92,10 +102,10 @@
 		9A37F84D1D8420D000FD2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4AB6A61D86857200783155 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9A4AB6A71D86857200783155 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		9A9371D51D8EDF3E00FC263C /* SysInform.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = SysInform.sh; sourceTree = "<group>"; };
+		9A7B0B741D94F36800652E8C /* fullScript.dump */ = {isa = PBXFileReference; lastKnownFileType = file; path = fullScript.dump; sourceTree = "<group>"; };
+		9A7B0B751D94F36800652E8C /* SysInform.dump */ = {isa = PBXFileReference; lastKnownFileType = file; path = SysInform.dump; sourceTree = "<group>"; };
 		9AA96EE41D85287900139C22 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
 		9AA96EE51D85287900139C22 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
-		9AA96EE81D8533E600139C22 /* fullScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fullScript.sh; sourceTree = "<group>"; };
 		9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
 		9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
 		9AB5F0711D8E5D85002408EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -105,6 +115,18 @@
 		9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarController.h; sourceTree = "<group>"; };
 		9ABE5EEB1D8CEABF002A54A4 /* ProgressBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarController.m; sourceTree = "<group>"; };
 		9ABE5EEC1D8CEABF002A54A4 /* ProgressBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarController.xib; sourceTree = "<group>"; };
+		9ABFE8EE1D94E96F0036E94B /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		9ABFE8EF1D94E96F0036E94B /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		9ABFE8F01D94E96F0036E94B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9ABFE8F11D94E96F0036E94B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		9ABFE8F21D94E96F0036E94B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		9ABFE8F31D94E96F0036E94B /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		9ABFE8F41D94E96F0036E94B /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		9ABFE8F51D94E96F0036E94B /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		9ABFE8F61D94E96F0036E94B /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		9ABFE8F71D94E96F0036E94B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9ABFE9031D94EA700036E94B /* BizonSecurityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BizonSecurityManager.h; sourceTree = "<group>"; };
+		9ABFE9041D94EA700036E94B /* BizonSecurityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BizonSecurityManager.m; sourceTree = "<group>"; };
 		9AF66D261D8FDECC00376D93 /* BizonBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BizonBox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +169,7 @@
 		9A37F8161D83D67600FD2D92 /* Bizon */ = {
 			isa = PBXGroup;
 			children = (
+				9ABFE8EC1D94E96F0036E94B /* AESCrypt-ObjC-master */,
 				9ABE5EE91D8CEABF002A54A4 /* ProgressBar */,
 				9A4AB6A51D86857200783155 /* Reachability */,
 				9AA96EE31D85286200139C22 /* TaskManager */,
@@ -158,6 +181,8 @@
 				9A37F82B1D83F92F00FD2D92 /* TabViews */,
 				9A37F8261D83EDA000FD2D92 /* Resources */,
 				9A37F8201D83D67600FD2D92 /* Info.plist */,
+				9ABFE9031D94EA700036E94B /* BizonSecurityManager.h */,
+				9ABFE9041D94EA700036E94B /* BizonSecurityManager.m */,
 			);
 			path = Bizon;
 			sourceTree = "<group>";
@@ -165,8 +190,8 @@
 		9A37F8261D83EDA000FD2D92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9A9371D51D8EDF3E00FC263C /* SysInform.sh */,
-				9AA96EE81D8533E600139C22 /* fullScript.sh */,
+				9A7B0B741D94F36800652E8C /* fullScript.dump */,
+				9A7B0B751D94F36800652E8C /* SysInform.dump */,
 				9A37F8271D83EDFF00FD2D92 /* Media.xcassets */,
 				9AB5F0721D8E5D85002408EC /* Localizable.strings */,
 			);
@@ -241,6 +266,23 @@
 			path = ProgressBar;
 			sourceTree = "<group>";
 		};
+		9ABFE8EC1D94E96F0036E94B /* AESCrypt-ObjC-master */ = {
+			isa = PBXGroup;
+			children = (
+				9ABFE8EE1D94E96F0036E94B /* AESCrypt.h */,
+				9ABFE8EF1D94E96F0036E94B /* AESCrypt.m */,
+				9ABFE8F01D94E96F0036E94B /* LICENSE */,
+				9ABFE8F11D94E96F0036E94B /* NSData+Base64.h */,
+				9ABFE8F21D94E96F0036E94B /* NSData+Base64.m */,
+				9ABFE8F31D94E96F0036E94B /* NSData+CommonCrypto.h */,
+				9ABFE8F41D94E96F0036E94B /* NSData+CommonCrypto.m */,
+				9ABFE8F51D94E96F0036E94B /* NSString+Base64.h */,
+				9ABFE8F61D94E96F0036E94B /* NSString+Base64.m */,
+				9ABFE8F71D94E96F0036E94B /* README.md */,
+			);
+			path = "AESCrypt-ObjC-master";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -252,12 +294,17 @@
 				9AA96EE61D85287900139C22 /* TaskManager.h in Headers */,
 				9ABE5EED1D8CEABF002A54A4 /* ProgressBarController.h in Headers */,
 				9AA96EEC1D854C3E00139C22 /* STPrivilegedTask.h in Headers */,
+				9ABFE8F91D94E96F0036E94B /* AESCrypt.h in Headers */,
 				9A37F82E1D83F96300FD2D92 /* ActivateTabView.h in Headers */,
 				9A37F8361D83F99100FD2D92 /* LogTabView.h in Headers */,
 				9A4AB6A81D86857200783155 /* Reachability.h in Headers */,
+				9ABFE8FC1D94E96F0036E94B /* NSData+Base64.h in Headers */,
+				9ABFE9001D94E96F0036E94B /* NSString+Base64.h in Headers */,
 				9A37F83A1D83F9AC00FD2D92 /* SupportTabView.h in Headers */,
 				9A37F8181D83D67600FD2D92 /* Bizon.h in Headers */,
+				9ABFE9051D94EA700036E94B /* BizonSecurityManager.h in Headers */,
 				9AB5F0771D8E752D002408EC /* Utilities.h in Headers */,
+				9ABFE8FE1D94E96F0036E94B /* NSData+CommonCrypto.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,14 +389,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AA96EE91D8533E600139C22 /* fullScript.sh in Resources */,
+				9A7B0B761D94F36800652E8C /* fullScript.dump in Resources */,
 				9AB5F0701D8E5D85002408EC /* Localizable.strings in Resources */,
 				9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */,
 				9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */,
 				9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */,
+				9A7B0B771D94F36800652E8C /* SysInform.dump in Resources */,
 				9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */,
 				9A37F81C1D83D67600FD2D92 /* Bizon.tiff in Resources */,
-				9A9371D61D8EDF3E00FC263C /* SysInform.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +421,12 @@
 				9A37F8331D83F97900FD2D92 /* OverViewTabView.m in Sources */,
 				9A37F81A1D83D67600FD2D92 /* Bizon.m in Sources */,
 				9A4AB6A91D86857200783155 /* Reachability.m in Sources */,
+				9ABFE8FF1D94E96F0036E94B /* NSData+CommonCrypto.m in Sources */,
+				9ABFE8FA1D94E96F0036E94B /* AESCrypt.m in Sources */,
 				9A37F82F1D83F96300FD2D92 /* ActivateTabView.m in Sources */,
+				9ABFE9011D94E96F0036E94B /* NSString+Base64.m in Sources */,
+				9ABFE9061D94EA700036E94B /* BizonSecurityManager.m in Sources */,
+				9ABFE8FD1D94E96F0036E94B /* NSData+Base64.m in Sources */,
 				9AB5F0781D8E752D002408EC /* Utilities.m in Sources */,
 				9A37F83B1D83F9AC00FD2D92 /* SupportTabView.m in Sources */,
 				9ABE5EEE1D8CEABF002A54A4 /* ProgressBarController.m in Sources */,

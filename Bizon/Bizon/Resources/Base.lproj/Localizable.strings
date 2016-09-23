@@ -22,7 +22,7 @@
 
 "3008" = "Boot into recovery partition and type: csrutil disable";
 
-"3009" = "Script doesn't support versions of OS X earlier than 10.9.5";
+"3009" = "Doesn't support versions of OS X earlier than 10.9.5";
 
 "3010" = "Only Kepler architecture cards are supported on OS X 10.9.5.";
 
@@ -55,27 +55,27 @@
 
 "Background services unloaded." = "Background services unloaded.";
 
-"Mac board-id found." = "Mac board-id found.";
+//"Mac board-id found." = "Mac board-id found.";
 
-"Searching for matching driver...\n" = "Searching for matching driver...\n";
+"Searching for matching driver...\n" = "Looking for Driver...\n";
 
-"IOPCITunnelCompatible mods done." = "IOPCITunnelCompatible mods done.";
+    //"IOPCITunnelCompatible mods done." = "IOPCITunnelCompatible mods done.";
 
-"4001" = "Download completed,Installing the package";
+"4001" = "Installing....";
 
-"4002" = "Reinstalling the package";
+"4002" = "Reinstalling....";
 
-"4003" = "Download and modify the older package";
+"4003" = "Download....";
 
-"4004" = "The latest package  is already downloaded.Reinstalling";
+"4004" = "Reinstalling....";
 
-"4005" = "Downloading the latest device driver.";
+"4005" = "Downloading....";
 
-"4006" = "Driver downloaded.";
+//"4006" = "Driver downloaded.";
 
-"4007" = "Searching the latest available package.";
+"4007" = "Looking for Driver....";
 
-"4008" = "Modified package ready. Installing";
+"4008" = "Installing....";
 
 "4009" = "All ready. Please restart the Mac.";
 

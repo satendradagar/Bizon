@@ -16,6 +16,7 @@
 
     __block ProgressBarController *progressController;
     NSFileHandle *logFile ;
+    NSDateFormatter *dateFormatter;
 
 }
 - (void)drawRect:(NSRect)dirtyRect {
@@ -28,6 +29,12 @@
     [super awakeFromNib];
     
     logFile = [NSFileHandle fileHandleForWritingAtPath:[Utilities LogFilePath]];
+    dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"dd MMM yyyy HH:mm:ss z"];
+
+//    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+//    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+//    [dateFormatter setLocale:[NSLocale systemLocale]];
 
 }
 
@@ -37,7 +44,7 @@
     
     NSLog(@"didClickActivate");
     if (NO == [Utilities isConnected]) {
-        [Utilities showNoInternetAlert];
+        [self showNoInternetAlert];
         return;
     }
 
@@ -46,7 +53,7 @@
     
     [TaskManager runScript:@"fullScript" withArgs:nil ResponseHandling:^(NSString *message) {
         
-        progressController.label.stringValue = [self messageForServerMessage:message];
+//        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
 
         
@@ -61,7 +68,7 @@
 -(IBAction)didClickRestore:(id)sender{
 
     if (NO == [Utilities isConnected]) {
-        [Utilities showNoInternetAlert];
+        [self showNoInternetAlert];
         return;
     }
 
@@ -70,7 +77,7 @@
     
     [TaskManager runScript:@"fullScript" withArgs:@[@"-uninstall"] ResponseHandling:^(NSString *message) {
         
-        progressController.label.stringValue = [self messageForServerMessage:message];
+//        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
 
         [weakSelf handleCriticalActions:message];
 
@@ -84,8 +91,10 @@
 
 -(IBAction)didClickAuto:(id)sender{
     
+//    [self showRestartActionSheet];
+//    return;
     if (NO == [Utilities isConnected]) {
-        [Utilities showNoInternetAlert];
+        [self showNoInternetAlert];
         return;
     }
 
@@ -94,7 +103,7 @@
 
     [TaskManager runScript:@"fullScript" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
         
-        progressController.label.stringValue = [self messageForServerMessage:message];
+//        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
 
     } termination:^(STPrivilegedTask * task) {
@@ -125,7 +134,7 @@
 -(IBAction)didClickSkip:(id)sender{
     
     if (NO == [Utilities isConnected]) {
-        [Utilities showNoInternetAlert];
+        [self showNoInternetAlert];
         return;
     }
 
@@ -134,7 +143,7 @@
     
     [TaskManager runScript:@"fullScript" withArgs:@[@"-skipdriver"] ResponseHandling:^(NSString *message) {
         
-        progressController.label.stringValue = [self messageForServerMessage:message];
+//        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
 
     } termination:^(STPrivilegedTask * task) {
@@ -159,15 +168,22 @@
 //        NSString *localized = NSLocalizedString([msg substringToIndex:msg.length - 1],nil);
         
         NSLog(@"%@:%@",panelMsg ,localized);
+
         if (nil != localized) {
-            [self LogMessage:[NSString stringWithFormat:@"\n%@ <%@: %@>",[[NSDate date] descriptionWithLocale:[NSLocale currentLocale]],panelMsg,localized]];
+            
+            [self LogMessage:[NSString stringWithFormat:@"\n%@ [%@]: %@",[dateFormatter stringFromDate:[NSDate date]],panelMsg,localized]];
+
             return localized;
+        }
+        else{
+            
+            [self LogMessage:[NSString stringWithFormat:@"\n%@ %@",[dateFormatter stringFromDate:[NSDate date]],msg]];
+            return msg;
         }
 
     }
-    [self LogMessage:[NSString stringWithFormat:@"\n%@ <%@>",[[NSDate date] descriptionWithLocale:[NSLocale currentLocale]],msg]];
-
-    return msg;
+    
+    return @"";
 }
     
 -(void)LogMessage:(NSString *)msg
@@ -186,6 +202,23 @@
         });
         
     }
+    else{
+        NSUInteger msgValue = [message integerValue];
+        if (msgValue > 3000 && msgValue < 4000) {//warning
+            
+            progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,[self messageForServerMessage:message]];
+
+            progressController.warningImage.hidden = NO;
+        }
+        else{
+            
+            progressController.label.stringValue = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+
+        }
+        NSLog(@"MSG INT:%lu",(unsigned long)msgValue);
+    }
+    
+    
 }
 
 
@@ -201,6 +234,7 @@
           contextInfo:NULL];
     [progressController.window makeKeyWindow];
     [progressController.window orderFront:nil];
+    progressController.warningImage.hidden = YES;
     progressController.label.stringValue = @"Loading Script";
 }
 
@@ -209,8 +243,9 @@
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = @"Restart Your Mac";
     alert.informativeText = @"Please note that In order to complete the installation process, you need to restart Your Mac Machine";
-    [alert addButtonWithTitle:@"Restart"];
-    
+    NSButton *button = [alert addButtonWithTitle:@"Restart Now"];
+    [alert addButtonWithTitle:@"Restart Later"];
+    [button becomeFirstResponder];
     
     NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
     NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
@@ -242,6 +277,16 @@
 -(void)closeSheet
 {
     [self performSelector:@selector(closeSheetWithDelay) withObject:nil afterDelay:5.0];
+}
+
+-(void)showNoInternetAlert{
+    
+    [self showActionSheet];
+
+    progressController.label.stringValue = [NSString stringWithFormat:@"%d:%@",3000,@"No Internet Connection."];
+    progressController.warningImage.hidden = NO;
+
+    [self closeSheet];
 }
 
 @end

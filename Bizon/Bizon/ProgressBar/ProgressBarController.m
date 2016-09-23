@@ -28,6 +28,7 @@ typedef void (^CancelDownload )(void);
 - (void)windowDidLoad {
     [super windowDidLoad];
     [_progressBar startAnimation:nil];
+    [_warningImage setHidden:YES];
 //    [_progressBar setDoubleValue:0.0];
     _label.stringValue = @"Initiating";
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.

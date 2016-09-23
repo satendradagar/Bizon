@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Bizon">
@@ -16,19 +17,19 @@
         <window title="≪ do not localize ≫" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5" userLabel="PrefPane">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="487" y="240" width="682" height="399"/>
+            <rect key="contentRect" x="487" y="240" width="756" height="399"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" misplaced="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="682" height="399"/>
+                <rect key="frame" x="0.0" y="0.0" width="756" height="399"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="kJl-z7-AG9">
-                        <rect key="frame" x="13" y="159" width="197" height="170"/>
+                        <rect key="frame" x="13" y="178" width="230" height="201"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="PaneIcon" id="z3J-cW-CGY"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="inJ-iw-fVk">
-                        <rect key="frame" x="3" y="60" width="217" height="79"/>
+                        <rect key="frame" x="3" y="91" width="217" height="79"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="BIZON BOX Device Manager" id="uMv-v6-Mov">
                             <font key="font" metaFont="system" size="26"/>
@@ -37,7 +38,7 @@
                         </textFieldCell>
                     </textField>
                     <tabView misplaced="YES" initialItem="n7J-gX-jjX" id="0L7-PO-Z2K">
-                        <rect key="frame" x="211" y="9" width="458" height="376"/>
+                        <rect key="frame" x="236" y="9" width="458" height="376"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <font key="font" metaFont="menuBar"/>
                         <tabViewItems>
@@ -46,11 +47,11 @@
                                     <rect key="frame" x="10" y="33" width="438" height="330"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="pLF-tv-AMc">
-                                            <rect key="frame" x="25" y="264" width="388" height="58"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="pLF-tv-AMc">
+                                            <rect key="frame" x="26" y="278" width="388" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Press “Activate” to start using Bi- zonBox" id="pzP-Ij-2Jz">
-                                                <font key="font" metaFont="system" size="24"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Press “Activate” to start using BizonBox" id="pzP-Ij-2Jz">
+                                                <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -67,9 +68,9 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" misplaced="YES" id="gqe-cA-eL6">
-                                            <rect key="frame" x="148" y="86" width="143" height="32"/>
+                                            <rect key="frame" x="139" y="86" width="163" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Restore" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pX9-iS-JtQ">
+                                            <buttonCell key="cell" type="push" title="Restore" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pX9-iS-JtQ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -78,9 +79,9 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" misplaced="YES" id="mCc-2z-6DU">
-                                            <rect key="frame" x="148" y="36" width="143" height="32"/>
+                                            <rect key="frame" x="139" y="36" width="163" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Skip" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JcP-fn-1hw">
+                                            <buttonCell key="cell" type="push" title="Skip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JcP-fn-1hw">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -89,9 +90,9 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" misplaced="YES" id="sRC-qL-gaL">
-                                            <rect key="frame" x="148" y="136" width="143" height="32"/>
+                                            <rect key="frame" x="139" y="131" width="163" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Auto" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tY1-5W-lth">
+                                            <buttonCell key="cell" type="push" title="Auto" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tY1-5W-lth">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -107,11 +108,38 @@
                                     <rect key="frame" x="10" y="33" width="438" height="330"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ixV-Tp-vRG">
-                                            <rect key="frame" x="15" y="71" width="408" height="228"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="ixV-Tp-vRG">
+                                            <rect key="frame" x="15" y="271" width="121" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="BIZON BOX Status:" id="q00-HU-1pM">
-                                                <font key="font" metaFont="system" size="18"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="BIZON BOX Status" id="q00-HU-1pM">
+                                                <font key="font" metaFont="systemSemibold" size="13"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="OxX-sz-Mkq">
+                                            <rect key="frame" x="15" y="246" width="95" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Graphics Card" id="qSQ-Cw-MV1">
+                                                <font key="font" metaFont="systemSemibold" size="13"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="QPJ-mT-N7S">
+                                            <rect key="frame" x="15" y="221" width="86" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="OS X Version" id="ZaQ-Vz-IhJ">
+                                                <font key="font" metaFont="systemSemibold" size="13"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="jVt-NA-tCk">
+                                            <rect key="frame" x="15" y="196" width="43" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Model" id="6Rl-yb-epz">
+                                                <font key="font" metaFont="systemSemibold" size="13"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -127,9 +155,48 @@
                                                 <action selector="didClickRefreshDetails:" target="MaD-NP-yB3" id="Gvb-M0-vA3"/>
                                             </connections>
                                         </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="hbo-QE-q2Z">
+                                            <rect key="frame" x="114" y="246" width="209" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="Xpb-RH-6qW">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="a4r-MJ-bdB">
+                                            <rect key="frame" x="105" y="221" width="236" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="Y82-mc-aJb">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="MiN-JF-AMc">
+                                            <rect key="frame" x="62" y="196" width="209" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="Rjl-k3-soV">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="50H-nK-2E8">
+                                            <rect key="frame" x="140" y="271" width="209" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="yxi-2l-Wel">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <connections>
-                                        <outlet property="overViewDetails" destination="ixV-Tp-vRG" id="KPR-it-5hd"/>
+                                        <outlet property="connectionState" destination="50H-nK-2E8" id="Ec9-2c-sqE"/>
+                                        <outlet property="graphicsCard" destination="hbo-QE-q2Z" id="MPF-E1-JEC"/>
+                                        <outlet property="macModel" destination="MiN-JF-AMc" id="Dkp-02-hjS"/>
+                                        <outlet property="macVersion" destination="a4r-MJ-bdB" id="4zb-9O-VUR"/>
                                     </connections>
                                 </view>
                             </tabViewItem>
@@ -165,7 +232,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" id="hQL-Vr-Blu">
                                                 <rect key="frame" x="1" y="1" width="402" height="243"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="FjM-CI-M3U">
                                                         <rect key="frame" x="0.0" y="0.0" width="402" height="243"/>
@@ -199,36 +266,36 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" misplaced="YES" id="EAB-o6-dBV">
-                                            <rect key="frame" x="155" y="189" width="129" height="32"/>
+                                            <rect key="frame" x="155" y="187" width="134" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="User Manual" bezelStyle="smallSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="XjD-sX-8MG">
+                                            <buttonCell key="cell" type="recessed" title="User Manual" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="XjD-sX-8MG">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="systemMedium" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="didClickShowUserManual:" target="JLG-B0-dqe" id="Wbw-fm-jdN"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" misplaced="YES" id="JKU-tN-7xo">
-                                            <rect key="frame" x="155" y="149" width="129" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Knowledge Base" bezelStyle="smallSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="BUc-VU-W9e">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="didClickKnowledgeBase:" target="JLG-B0-dqe" id="LCr-zD-GIO"/>
-                                            </connections>
-                                        </button>
                                         <button verticalHuggingPriority="750" misplaced="YES" id="rnO-zI-sTx">
-                                            <rect key="frame" x="155" y="109" width="129" height="32"/>
+                                            <rect key="frame" x="155" y="111" width="134" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="smallSquare" title="Support Ticket" bezelStyle="smallSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="ApG-xP-jVZ">
+                                            <buttonCell key="cell" type="recessed" title="Support Ticket" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="ApG-xP-jVZ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="systemMedium" size="12"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="didClickShowSupport:" target="JLG-B0-dqe" id="HGb-fF-wi2"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="JKU-tN-7xo">
+                                            <rect key="frame" x="155" y="146" width="134" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="recessed" title="Knowledge Base" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" inset="2" id="BUc-VU-W9e">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="systemMedium" size="12"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="didClickKnowledgeBase:" target="JLG-B0-dqe" id="LCr-zD-GIO"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -241,7 +308,7 @@
                     </tabView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="530" y="187"/>
+            <point key="canvasLocation" x="336" y="180.5"/>
         </window>
     </objects>
     <resources>

@@ -8,6 +8,7 @@
 
 #import "TaskManager.h"
 #import "STPrivilegedTask.h"
+#import "BizonSecurityManager.h"
 
 @implementation TaskManager
 
@@ -15,7 +16,7 @@
 + (void ) runScript:(NSString *) scriptName withArgs:(NSArray *)args ResponseHandling:(void (^)(NSString *message)) responseBlock termination: (void (^)(STPrivilegedTask *)) terminate{
 
     __block NSPipe *outPipe = [NSPipe pipe];
-    NSString  * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:scriptName ofType:@"sh"];
+    NSString  * scriptPath = [BizonSecurityManager decryptedPathForResourceName:scriptName];
     STPrivilegedTask * hiddenTask = [STPrivilegedTask new];
     [hiddenTask setLaunchPath:@"/bin/sh"];
     [hiddenTask setCurrentDirectoryPath:[[NSBundle bundleForClass:[self class]] resourcePath]];
@@ -32,9 +33,13 @@
     OSStatus err = [hiddenTask launchWithResponseHandling:responseBlock];
     if (err != errAuthorizationSuccess) {
         if (err == errAuthorizationCanceled) {
+            terminate(hiddenTask);
+            responseBlock(@"Cancelling action....");
             NSLog(@"User cancelled");
             return;
         }  else {
+            responseBlock([NSString stringWithFormat:@"Something went wrong: %d", (int)err]);
+            terminate(hiddenTask);
             NSLog(@"Something went wrong: %d", (int)err);
                 // For error codes, see http://www.opensource.apple.com/source/libsecurity_authorization/libsecurity_authorization-36329/lib/Authorization.h
         }

@@ -14,6 +14,8 @@
 
 @property (unsafe_unretained) IBOutlet NSTextField *label;
 
+@property (unsafe_unretained) IBOutlet NSImageView *warningImage;
+
 -(void)updateBarForDownloded:(NSUInteger)current ofTotal:(NSUInteger)total;
 @property (unsafe_unretained) IBOutlet NSButton *cancelButton;
 
