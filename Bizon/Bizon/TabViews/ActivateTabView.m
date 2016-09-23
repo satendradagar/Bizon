@@ -163,7 +163,7 @@
     if (msg.length) {
         
         NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
-        msg = [msg substringFromIndex:msg.length -1];
+//        msg = [msg substringFromIndex:msg.length -1];
         NSString *panelMsg = [NSString stringWithFormat:@"%ld",(long)[msg integerValue]];
         NSLog(@"msg: %@, panel: %@",msg,panelMsg);
         if (nil == panelMsg || msg.integerValue == 0) {
@@ -200,48 +200,57 @@
 -(void)handleCriticalActions:(NSString *)message{
     
     message = [NSString stringWithFormat:@"%@",message];
-    if ([message hasPrefix:@"4009"]) {//Restart case
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
+    NSArray *msgs = [message componentsSeparatedByString:@"\n"];
+    
+    for (NSString *single in msgs) {
+        NSLog(@"FORIN: %@",single);
+        if (single.length <= 1) {
+            NSLog(@"Continue");
+            continue;
+        }
+        if ([single hasPrefix:@"4009"]) {//Restart case
             
-            [self showRestartActionSheet];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self showRestartActionSheet];
+                
+            });
             
-        });
-        
-    }
-    else{
-
-            NSUInteger msgValue = [message integerValue];
+        }
+        else{
+            
+            NSUInteger msgValue = [single integerValue];
             if (msgValue > 3000 && msgValue < 4000) {//warning
                 
-                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:single]];
                 if (nil != localized) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
                         progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
                         
                     });
-   
+                    
                 }
-
+                
                 progressController.warningImage.hidden = NO;
             }
             else{
                 
                 progressController.warningImage.hidden = YES;
-
-                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+                
+                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:single]];
                 if (nil != localized) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-
-                    progressController.label.stringValue = localized;
+                        
+                        progressController.label.stringValue = localized;
                         
                     });
                 }
-
+                
             }
             NSLog(@"MSG INT:%lu",(unsigned long)msgValue);
-
+            
+        }
     }
     
     
