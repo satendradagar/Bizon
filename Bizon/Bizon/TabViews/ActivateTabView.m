@@ -181,7 +181,7 @@
         else{
             
             [self LogMessage:[NSString stringWithFormat:@"\n%@ %@",[dateFormatter stringFromDate:[NSDate date]],msg]];
-            return msg;
+            return @"Proceesing...";
         }
 
     }
