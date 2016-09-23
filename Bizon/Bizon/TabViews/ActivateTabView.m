@@ -164,6 +164,7 @@
         
         NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
         NSString *panelMsg = [NSString stringWithFormat:@"%ld",(long)[msg integerValue]];
+        NSLog(@"msg: %@, panel: %@",msg,panelMsg);
         if (nil == panelMsg || msg.integerValue == 0) {
             
             panelMsg = [msg substringFromIndex:msg.length -1];
@@ -207,27 +208,31 @@
         
     }
     else{
-        NSUInteger msgValue = [message integerValue];
-        if (msgValue > 3000 && msgValue < 4000) {//warning
-            
-            NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
-            if (nil != localized) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            NSUInteger msgValue = [message integerValue];
+            if (msgValue > 3000 && msgValue < 4000) {//warning
                 
+                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+                if (nil != localized) {
+                    
+                }
+                progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
+
+                progressController.warningImage.hidden = NO;
             }
-            progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
+            else{
+                
+                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+                if (nil != localized) {
+                    progressController.label.stringValue = localized;
 
-            progressController.warningImage.hidden = NO;
-        }
-        else{
-            
-            NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
-            if (nil != localized) {
-                progressController.label.stringValue = localized;
+                }
 
             }
+            NSLog(@"MSG INT:%lu",(unsigned long)msgValue);
 
-        }
-        NSLog(@"MSG INT:%lu",(unsigned long)msgValue);
+        });
     }
     
     
