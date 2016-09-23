@@ -178,6 +178,10 @@
         if (nil != localized) {
             
             [self LogMessage:[NSString stringWithFormat:@"\n%@ [%@]: %@",[dateFormatter stringFromDate:[NSDate date]],panelMsg,localized]];
+            if ([localized isEqualToString:panelMsg]) {
+                
+                return nil;
+            }
 
             return localized;
         }
