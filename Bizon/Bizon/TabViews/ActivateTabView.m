@@ -226,7 +226,7 @@
             NSUInteger msgValue = [single integerValue];
             if (msgValue > 3000 && msgValue < 4000) {//warning
                 
-                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:single]];
+                NSString *localized = [self messageForServerMessage:single];
                 if (nil != localized) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
@@ -242,7 +242,7 @@
                 
                 progressController.warningImage.hidden = YES;
                 
-                NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:single]];
+                NSString *localized = [self messageForServerMessage:single];
                 if (nil != localized) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
