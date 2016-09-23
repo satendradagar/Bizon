@@ -42,18 +42,18 @@
 
 "3018" = "Application support path not found. Please install automate-eGPU first.";
 
-"Checking IOPCITunnelCompatible keys...\n" = "Checking IOPCITunnelCompatible keys...\n";
+//"Checking IOPCITunnelCompatible keys...\n" = "Checking IOPCITunnelCompatible keys...\n";
 
-"IOPCITunnelCompatible mods are valid." = "IOPCITunnelCompatible mods are valid.";
-"You are running official Nvidia driver." = "You are running official Nvidia driver.";
+//"IOPCITunnelCompatible mods are valid." = "IOPCITunnelCompatible mods are valid.";
+//"You are running official Nvidia driver." = "You are running official Nvidia driver.";
 
-"Automate-eGPU uninstall ready." = "Automate-eGPU uninstall ready.";
+    //"Automate-eGPU uninstall ready." = "Automate-eGPU uninstall ready.";
 
-"Board-id added." = "Board-id added.";
+//"Board-id added." = "Board-id added.";
 
-"Your system is eGPU enabled and Nvidia web driver is up to date." = "Your system is eGPU enabled and Nvidia web driver is up to date.";
+//"Your system is eGPU enabled and Nvidia web driver is up to date." = "Your system is eGPU enabled and Nvidia web driver is up to date.";
 
-"Background services unloaded." = "Background services unloaded.";
+//"Background services unloaded." = "Background services unloaded.";
 
 //"Mac board-id found." = "Mac board-id found.";
 

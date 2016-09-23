@@ -109,7 +109,6 @@
 		9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
 		9AA96EEB1D854C3E00139C22 /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
 		9AB5F0711D8E5D85002408EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9AB5F0741D8E5EB0002408EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9AB5F0751D8E752D002408EC /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		9AB5F0761D8E752D002408EC /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		9ABE5EEA1D8CEABF002A54A4 /* ProgressBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarController.h; sourceTree = "<group>"; };
@@ -476,7 +475,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				9AB5F0711D8E5D85002408EC /* Base */,
-				9AB5F0741D8E5EB0002408EC /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
