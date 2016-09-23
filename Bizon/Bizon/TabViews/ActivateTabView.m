@@ -181,7 +181,7 @@
         else{
             
             [self LogMessage:[NSString stringWithFormat:@"\n%@ %@",[dateFormatter stringFromDate:[NSDate date]],msg]];
-            return @"Proceesing...";
+            return nil;
         }
 
     }
@@ -209,13 +209,21 @@
         NSUInteger msgValue = [message integerValue];
         if (msgValue > 3000 && msgValue < 4000) {//warning
             
-            progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,[self messageForServerMessage:message]];
+            NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+            if (nil != localized) {
+                
+            }
+            progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
 
             progressController.warningImage.hidden = NO;
         }
         else{
             
-            progressController.label.stringValue = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+            NSString *localized = [NSString stringWithFormat:@"%@",[self messageForServerMessage:message]];
+            if (nil != localized) {
+                progressController.label.stringValue = localized;
+
+            }
 
         }
         NSLog(@"MSG INT:%lu",(unsigned long)msgValue);
