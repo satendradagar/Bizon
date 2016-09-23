@@ -164,7 +164,7 @@
         
         NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
         NSString *panelMsg = [NSString stringWithFormat:@"%ld",(long)[msg integerValue]];
-        if (nil == panelMsg) {
+        if (nil == panelMsg && panelMsg.integerValue > 0) {
             panelMsg = [msg substringFromIndex:msg.length -1];
         }
         NSString *localized = NSLocalizedStringFromTableInBundle(panelMsg, @"Localizable", bundle, nil);
