@@ -199,6 +199,7 @@
 
 -(void)handleCriticalActions:(NSString *)message{
     
+    message = [message copy];
     if ([message hasPrefix:@"4009"]) {//Restart case
         
         dispatch_async(dispatch_get_main_queue(), ^{
