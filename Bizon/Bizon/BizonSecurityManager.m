@@ -36,6 +36,8 @@
     NSData *scriptData = [NSData dataWithContentsOfFile:encryptedPath];
     NSError *error = nil;
     NSData *converted = [scriptData decryptedAES256DataUsingKey:kEncryptKey error:&error];
+//    NSData *converted = [scriptData AES256EncryptedDataUsingKey:kEncryptKey error:&error];
+
     NSLog(@"Nserror: %@",error);
     if (nil == error) {
         [converted writeToFile:decryptedPath atomically:YES];

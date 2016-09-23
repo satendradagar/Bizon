@@ -51,6 +51,7 @@
 		9ABFE9011D94E96F0036E94B /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFE8F61D94E96F0036E94B /* NSString+Base64.m */; };
 		9ABFE9051D94EA700036E94B /* BizonSecurityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABFE9031D94EA700036E94B /* BizonSecurityManager.h */; };
 		9ABFE9061D94EA700036E94B /* BizonSecurityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFE9041D94EA700036E94B /* BizonSecurityManager.m */; };
+		9ADEA14A1D952C3E004BFD68 /* fullScript1.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9ADEA1491D952C3E004BFD68 /* fullScript1.dump */; };
 		9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF66D261D8FDECC00376D93 /* BizonBox.png */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		9ABFE8F71D94E96F0036E94B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9ABFE9031D94EA700036E94B /* BizonSecurityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BizonSecurityManager.h; sourceTree = "<group>"; };
 		9ABFE9041D94EA700036E94B /* BizonSecurityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BizonSecurityManager.m; sourceTree = "<group>"; };
+		9ADEA1491D952C3E004BFD68 /* fullScript1.dump */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fullScript1.dump; sourceTree = "<group>"; };
 		9AF66D261D8FDECC00376D93 /* BizonBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BizonBox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 		9A37F8261D83EDA000FD2D92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9ADEA1491D952C3E004BFD68 /* fullScript1.dump */,
 				9A7B0B741D94F36800652E8C /* fullScript.dump */,
 				9A7B0B751D94F36800652E8C /* SysInform.dump */,
 				9A37F8271D83EDFF00FD2D92 /* Media.xcassets */,
@@ -394,6 +397,7 @@
 				9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */,
 				9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */,
 				9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */,
+				9ADEA14A1D952C3E004BFD68 /* fullScript1.dump in Resources */,
 				9A7B0B771D94F36800652E8C /* SysInform.dump in Resources */,
 				9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */,
 				9A37F81C1D83D67600FD2D92 /* Bizon.tiff in Resources */,
