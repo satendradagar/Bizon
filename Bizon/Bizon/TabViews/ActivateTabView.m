@@ -331,7 +331,7 @@
     alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
     
 
-    alert.alertStyle = NSAlertStyleCritical;
+    alert.alertStyle = 2;
     NSInteger answer = [alert runModal];
     
     if (answer == NSAlertFirstButtonReturn) {
