@@ -17,6 +17,7 @@
     __block ProgressBarController *progressController;
     NSFileHandle *logFile ;
     NSDateFormatter *dateFormatter;
+    BOOL isPerformingActivate;
 
 }
 - (void)drawRect:(NSRect)dirtyRect {
@@ -27,7 +28,7 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    
+    isPerformingActivate = NO;
     logFile = [NSFileHandle fileHandleForWritingAtPath:[Utilities LogFilePath]];
     dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"dd MMM yyyy HH:mm:ss z"];
@@ -41,7 +42,7 @@
 #pragma mark - User Actions
 
 -(IBAction)didClickActivate:(id)sender{
-    
+    isPerformingActivate = YES;
     NSLog(@"didClickActivate");
     if (NO == [Utilities isConnected]) {
         [self showNoInternetAlert];
@@ -67,6 +68,8 @@
 
 -(IBAction)didClickRestore:(id)sender{
 
+    isPerformingActivate = NO;
+
     if (NO == [Utilities isConnected]) {
         [self showNoInternetAlert];
         return;
@@ -91,16 +94,18 @@
 
 -(IBAction)didClickAuto:(id)sender{
     
+    isPerformingActivate = NO;
+
 //    [self showRestartActionSheet];
 //    return;
-    if (NO == [Utilities isConnected]) {
-        [self showNoInternetAlert];
-        return;
-    }
-
+//    if (NO == [Utilities isConnected]) {
+//        [self showNoInternetAlert];
+//        return;
+//    }
+//
     __block typeof(self) weakSelf = self;
-    [self showActionSheet];
-
+//    [self showActionSheet];
+//
     [TaskManager runScript:@"fullScript" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
@@ -133,6 +138,8 @@
 
 -(IBAction)didClickSkip:(id)sender{
     
+    isPerformingActivate = NO;
+
     if (NO == [Utilities isConnected]) {
         [self showNoInternetAlert];
         return;
@@ -214,6 +221,10 @@
         }
         if ([single hasPrefix:@"4009"]) {//Restart case
             
+            if (isPerformingActivate) {
+                [self didClickAuto:nil];
+                return;
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self showRestartActionSheet];
@@ -229,8 +240,9 @@
                 NSString *localized = [self messageForServerMessage:single];
                 if (nil != localized) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
+                        [self closeSheetWithDelay];
+//                        progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
+                        [self showErrrorMessage:[NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized]];
                         
                     });
                     
@@ -266,6 +278,7 @@
     progressController = [[ProgressBarController alloc] initWithWindowNibName:@"ProgressBarController"];
     
     [[progressController window] center];
+    [self.window makeFirstResponder:progressController.window];
     [NSApp beginSheet:progressController.window
        modalForWindow:self.window
         modalDelegate:nil
@@ -274,7 +287,7 @@
     [progressController.window makeKeyWindow];
     [progressController.window orderFront:nil];
     progressController.warningImage.hidden = YES;
-    progressController.label.stringValue = @"Loading Script";
+    progressController.label.stringValue = @"Initiating....";
 }
 
 -(void)showRestartActionSheet{
@@ -301,6 +314,27 @@
         if (![appleScript executeAndReturnError:&errDict]) {
             NSLog(@"%@", errDict);
         }
+        
+    }
+    
+}
+
+-(void)showErrrorMessage:(NSString *)message{
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"Error";
+    alert.informativeText = message;
+    NSButton *button = [alert addButtonWithTitle:@"Ok"];
+   
+    NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
+    NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
+    alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
+    
+
+    alert.alertStyle = NSAlertStyleCritical;
+    NSInteger answer = [alert runModal];
+    
+    if (answer == NSAlertFirstButtonReturn) {
         
     }
     

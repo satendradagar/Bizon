@@ -6,7 +6,7 @@
   Copyright © 2016 Satendra Singh. All rights reserved.
 */
 
-"3001" = "Missing IOPCITunnelCompatible keys.";
+//"3001" = "Missing IOPCITunnelCompatible keys.";
 
 "3002" = "No Nvidia web driver detected.";
 
@@ -26,7 +26,7 @@
 
 "3010" = "Only Kepler architecture cards are supported on OS X 10.9.5.";
 
-"3011" = "Looking for Driver...";
+//"3011" = "Looking for Driver...";
 
 "3012" = "Thunderbolt device is connected, but no external GPUs detected.";
 
@@ -41,6 +41,8 @@
 "3017" = "Please install eGPUs one by one.";
 
 "3018" = "Application support path not found. Please install automate-eGPU first.";
+
+"3019" = "Authentication cancelled";
 
 //"Checking IOPCITunnelCompatible keys...\n" = "Checking IOPCITunnelCompatible keys...\n";
 

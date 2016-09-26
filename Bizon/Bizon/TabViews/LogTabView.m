@@ -29,7 +29,27 @@
 -(IBAction)didClickSaveSystemInfo:(id)sender{
     
     NSString *output = nil;
-    [TaskManager runScript:@"SysInform" withArguments:nil output:&output errorDescription:nil];
+    NSDictionary *errorInfo = [NSDictionary new];
+    NSString *script =  @"do shell script \"echo $(ioreg -l)\"";
+    
+    NSAppleScript *appleScript = [[NSAppleScript new] initWithSource:script];
+    NSAppleEventDescriptor * eventResult = [appleScript executeAndReturnError:&errorInfo];
+    
+        // Check errorInfo
+    if (! eventResult)
+        {
+            // Describe common errors
+        
+            // Set error message from provided message
+        }
+    else
+        {
+            // Set output to the AppleScript's output
+            output = [eventResult stringValue];
+        
+        }
+
+//    [TaskManager runScript:@"SysInform" withArguments:nil output:&output errorDescription:nil];
     if (nil != output) {
         NSURL *finalUrl = [[self desktop] URLByAppendingPathComponent:@"systeminfo.txt"];
         [output writeToURL:finalUrl atomically:YES encoding:NSNEXTSTEPStringEncoding error:nil];

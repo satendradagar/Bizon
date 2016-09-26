@@ -36,7 +36,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="inJ-iw-fVk">
                                 <rect key="frame" x="18" y="92" width="217" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="BIZON BOX Device Manager" id="uMv-v6-Mov">
+                                <textFieldCell key="cell" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" alignment="center" title="BIZON BOX Device Manager" id="uMv-v6-Mov">
                                     <font key="font" metaFont="system" size="26"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -72,8 +72,8 @@
                                                         <action selector="didClickActivate:" target="9GK-ts-0mK" id="skc-Mx-dqy"/>
                                                     </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" id="gqe-cA-eL6">
-                                                    <rect key="frame" x="139" y="86" width="163" height="32"/>
+                                                <button verticalHuggingPriority="750" misplaced="YES" id="gqe-cA-eL6">
+                                                    <rect key="frame" x="139" y="142" width="163" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="push" title="Restore" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pX9-iS-JtQ">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -83,8 +83,8 @@
                                                         <action selector="didClickRestore:" target="9GK-ts-0mK" id="ayX-eg-WTX"/>
                                                     </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" id="mCc-2z-6DU">
-                                                    <rect key="frame" x="139" y="36" width="163" height="32"/>
+                                                <button verticalHuggingPriority="750" misplaced="YES" id="mCc-2z-6DU">
+                                                    <rect key="frame" x="139" y="109" width="163" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="push" title="Skip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JcP-fn-1hw">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -92,17 +92,6 @@
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="didClickSkip:" target="9GK-ts-0mK" id="ft2-DQ-Rvw"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" id="sRC-qL-gaL">
-                                                    <rect key="frame" x="139" y="131" width="163" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="push" title="Auto" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tY1-5W-lth">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="didClickAuto:" target="9GK-ts-0mK" id="8KB-uK-lh7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -237,7 +226,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" id="hQL-Vr-Blu">
                                                         <rect key="frame" x="1" y="1" width="402" height="243"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="FjM-CI-M3U">
                                                                 <rect key="frame" x="0.0" y="0.0" width="402" height="243"/>

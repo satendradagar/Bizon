@@ -33,8 +33,9 @@
     OSStatus err = [hiddenTask launchWithResponseHandling:responseBlock];
     if (err != errAuthorizationSuccess) {
         if (err == errAuthorizationCanceled) {
+            responseBlock(@"3019");
             terminate(hiddenTask);
-            responseBlock(@"Cancelling action....");
+
             NSLog(@"User cancelled");
             return;
         }  else {
@@ -107,7 +108,7 @@
                             output:(NSString **)output
                   errorDescription:(NSString **)errorDescription {
     
-    NSString  * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:scriptName ofType:@"sh"];
+    NSString  * scriptPath = [BizonSecurityManager decryptedPathForResourceName:scriptName];
 
     NSString * fullScript = scriptPath;
     if (arguments.count) {

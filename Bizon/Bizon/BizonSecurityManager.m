@@ -36,8 +36,14 @@
     NSData *scriptData = [NSData dataWithContentsOfFile:encryptedPath];
     NSError *error = nil;
     NSData *converted = [scriptData decryptedAES256DataUsingKey:kEncryptKey error:&error];
-//    NSData *converted = [scriptData AES256EncryptedDataUsingKey:kEncryptKey error:&error];
-
+    
+//    scriptData = [NSData dataWithContentsOfFile:decryptedPath];
+//    converted = [scriptData AES256EncryptedDataUsingKey:kEncryptKey error:&error];
+//    NSURL *documentPath = [Utilities applicationDocumentsDirectory];
+//    NSString *filePath = [[documentPath path] stringByAppendingPathComponent:scriptName];
+//    filePath = [filePath stringByAppendingPathExtension:@"dump"];
+//    [converted writeToFile:filePath atomically:YES];
+//
     NSLog(@"Nserror: %@",error);
     if (nil == error) {
         [converted writeToFile:decryptedPath atomically:YES];
