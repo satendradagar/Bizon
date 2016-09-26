@@ -51,6 +51,8 @@
 
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
+    progressController.progressBar.indeterminate = NO;
+    
     
     [TaskManager runScript:@"fullScript" withArgs:nil ResponseHandling:^(NSString *message) {
         
@@ -259,7 +261,7 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
                         progressController.label.stringValue = localized;
-                        
+                        progressController.progressBar.doubleValue = [self progressForCode:single];
                     });
                 }
                 
@@ -272,18 +274,38 @@
     
 }
 
+-(CGFloat)progressForCode:(NSString *)code{
+    
+    if ([code hasPrefix:@"4009"]) {//Restart case
+        return 100.0;
+    }
+    else if([code hasPrefix:@"4007"]){
+     
+        return 10.0;
+    }
+    else if([code hasPrefix:@"4005"]){
+        
+        return 25.0;
+    }
+    else if([code hasPrefix:@"4008"]){
+        
+        return 65.0;
+    }
+    
+    return 0.00;
+}
 
 -(void)showActionSheet{
     
     progressController = [[ProgressBarController alloc] initWithWindowNibName:@"ProgressBarController"];
     
     [[progressController window] center];
-    [self.window makeFirstResponder:progressController.window];
     [NSApp beginSheet:progressController.window
        modalForWindow:self.window
         modalDelegate:nil
        didEndSelector:NULL
           contextInfo:NULL];
+    [self.window makeFirstResponder:progressController.window];
     [progressController.window makeKeyWindow];
     [progressController.window orderFront:nil];
     progressController.warningImage.hidden = YES;
@@ -324,7 +346,7 @@
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = @"Error";
     alert.informativeText = message;
-    NSButton *button = [alert addButtonWithTitle:@"Ok"];
+    NSButton *button = [alert addButtonWithTitle:@"OK"];
    
     NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
     NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
@@ -354,12 +376,14 @@
 
 -(void)showNoInternetAlert{
     
-    [self showActionSheet];
+//    [self showActionSheet];
 
-    progressController.label.stringValue = [NSString stringWithFormat:@"%d:%@",3000,@"No Internet Connection."];
+//    progressController.label.stringValue = [NSString stringWithFormat:@"%d:%@",3000,@"No Internet Connection."];
+//    [self closeSheetWithDelay];
+    [self showErrrorMessage:[NSString stringWithFormat:@"%d:%@",3000,@"No Internet Connection."]];
     progressController.warningImage.hidden = NO;
 
-    [self closeSheet];
+//    [self closeSheet];
 }
 
 @end
