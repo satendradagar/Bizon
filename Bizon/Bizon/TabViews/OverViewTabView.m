@@ -7,6 +7,7 @@
 //
 
 #import "OverViewTabView.h"
+#import "TaskManager.h"
 
 @implementation OverViewTabView
 
@@ -19,7 +20,6 @@
 -(void)awakeFromNib{
 
     [super awakeFromNib];
-    [self setInfo];
 }
 
 -(void)setInfo{
@@ -29,13 +29,30 @@
  Mac: xxxx (MacBook Mid-2014)
  */
 //    NSString *finalDetails = [NSString stringWithFormat:@"BIZON BOX Status  %@\nGraphics card   %@\nOS X Version    %@\nModel   Mac %@",/* DISABLES CODE */ (1)?@"Connected":@"Not Connected",[OverViewTabView videoCardInfo],[OverViewTabView osVersion],[OverViewTabView macModelName]];
-    self.connectionState.stringValue = (1)?@"Connected":@"Not Connected";
+    self.connectionState.stringValue = ([self getConnectedState])?@"Connected":@"Not Connected";
     self.graphicsCard.stringValue = [OverViewTabView videoCardInfo];
     self.macVersion.stringValue = [OverViewTabView osVersion];
     self.macModel.stringValue = [OverViewTabView macModelName];
     
 }
 
+-(void)reloadContent{
+    
+    [self setInfo];
+
+}
+
+-(BOOL)getConnectedState{
+    
+    NSString *output = nil;
+    [TaskManager runScript:@"DetectGPU" withArguments:nil output:&output errorDescription:nil];
+    if (nil != output) {
+        NSLog(@"output = %@",output);
+        return [output boolValue];
+    }
+    
+    return NO;
+}
 -(IBAction)didClickRefreshDetails:(id)sender{
     
     [self setInfo];

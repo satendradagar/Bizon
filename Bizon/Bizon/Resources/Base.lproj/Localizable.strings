@@ -38,9 +38,9 @@
 
 "3016" = "URL doesn't exist.";
 
-"3017" = "Please install eGPUs one by one.";
+"3017" = "Please install one by one.";
 
-"3018" = "Application support path not found. Please install automate-eGPU first.";
+"3018" = "Application support path not found. Please install first.";
 
 "3019" = "Authentication cancelled";
 

@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="_window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
                 <outlet property="logView" destination="bUS-og-24S" id="vWI-LO-rCv"/>
+                <outlet property="overView" destination="MaD-NP-yB3" id="y5e-rT-3om"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -226,7 +227,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <clipView key="contentView" id="hQL-Vr-Blu">
                                                         <rect key="frame" x="1" y="1" width="402" height="243"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="FjM-CI-M3U">
                                                                 <rect key="frame" x="0.0" y="0.0" width="402" height="243"/>

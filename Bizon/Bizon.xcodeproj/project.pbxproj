@@ -26,6 +26,7 @@
 		9A37F84C1D8420D000FD2D92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F84A1D8420D000FD2D92 /* MainMenu.xib */; };
 		9A37F8571D8422D200FD2D92 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8271D83EDFF00FD2D92 /* Media.xcassets */; };
 		9A37F8611D84331B00FD2D92 /* Bizon.prefPane in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A37F8141D83D67600FD2D92 /* Bizon.prefPane */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9A47CBB81D9A749A001CB872 /* DetectGPU.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9A47CBB71D9A749A001CB872 /* DetectGPU.dump */; };
 		9A4AB6A81D86857200783155 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4AB6A61D86857200783155 /* Reachability.h */; };
 		9A4AB6A91D86857200783155 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AB6A71D86857200783155 /* Reachability.m */; };
 		9A7B0B761D94F36800652E8C /* fullScript.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9A7B0B741D94F36800652E8C /* fullScript.dump */; };
@@ -100,6 +101,7 @@
 		9A37F8481D8420D000FD2D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A37F84B1D8420D000FD2D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9A37F84D1D8420D000FD2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A47CBB71D9A749A001CB872 /* DetectGPU.dump */ = {isa = PBXFileReference; lastKnownFileType = file; path = DetectGPU.dump; sourceTree = "<group>"; };
 		9A4AB6A61D86857200783155 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9A4AB6A71D86857200783155 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9A7B0B741D94F36800652E8C /* fullScript.dump */ = {isa = PBXFileReference; lastKnownFileType = file; path = fullScript.dump; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		9A37F8261D83EDA000FD2D92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A47CBB71D9A749A001CB872 /* DetectGPU.dump */,
 				9A7B0B741D94F36800652E8C /* fullScript.dump */,
 				9A7B0B751D94F36800652E8C /* SysInform.dump */,
 				9A37F8271D83EDFF00FD2D92 /* Media.xcassets */,
@@ -390,6 +393,7 @@
 			files = (
 				9A7B0B761D94F36800652E8C /* fullScript.dump in Resources */,
 				9AB5F0701D8E5D85002408EC /* Localizable.strings in Resources */,
+				9A47CBB81D9A749A001CB872 /* DetectGPU.dump in Resources */,
 				9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */,
 				9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */,
 				9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */,

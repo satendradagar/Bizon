@@ -47,6 +47,11 @@
     NSLog(@"Nserror: %@",error);
     if (nil == error) {
         [converted writeToFile:decryptedPath atomically:YES];
+        NSDictionary* attr = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithShort:0755], NSFilePosixPermissions, NULL];
+        
+        NSError *error = nil;
+        [[NSFileManager defaultManager] setAttributes:attr ofItemAtPath:decryptedPath error:&error];
+        NSLog(@"Permission Error = %@",error);
     }
     
 }
@@ -58,16 +63,17 @@
 }
 
 +(void)startAccess{
-    
+    NSLog(@"Start accessing");
     [self decryptScriptAndSave:@"fullScript"];
-    [self decryptScriptAndSave:@"SysInform"];
+    [self decryptScriptAndSave:@"DetectGPU"];
 
 }
 
 +(void)stopAccess{
-    
+    NSLog(@"Stop accessing");
+
     [self deleteScript:@"fullScript"];
-    [self deleteScript:@"SysInform"];
+    [self deleteScript:@"DetectGPU"];
     
 }
 @end

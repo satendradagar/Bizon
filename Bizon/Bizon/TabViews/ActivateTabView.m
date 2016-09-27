@@ -224,6 +224,11 @@
         if ([single hasPrefix:@"4009"]) {//Restart case
             
             if (isPerformingActivate) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+
+                progressController.progressBar.doubleValue = [self progressForCode:single];
+                    
+                });
                 [self didClickAuto:nil];
                 return;
             }
@@ -242,7 +247,7 @@
                 NSString *localized = [self messageForServerMessage:single];
                 if (nil != localized) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self closeSheetWithDelay];
+                       [self closeSheetWithDelay];
 //                        progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
                         [self showErrrorMessage:[NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized]];
                         
@@ -300,14 +305,17 @@
     progressController = [[ProgressBarController alloc] initWithWindowNibName:@"ProgressBarController"];
     
     [[progressController window] center];
+
     [NSApp beginSheet:progressController.window
        modalForWindow:self.window
         modalDelegate:nil
        didEndSelector:NULL
           contextInfo:NULL];
-    [self.window makeFirstResponder:progressController.window];
+//    [self.window makeFirstResponder:progressController.window];
     [progressController.window makeKeyWindow];
     [progressController.window orderFront:nil];
+    [self.window makeFirstResponder:progressController.window];
+
     progressController.warningImage.hidden = YES;
     progressController.label.stringValue = @"Initiating....";
 }

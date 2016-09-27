@@ -28,6 +28,7 @@ typedef void (^CancelDownload )(void);
 -(void)awakeFromNib{
     
     [super awakeFromNib];
+    _progressBar.controlTint = NSBlueControlTint;
     [_progressBar setUsesThreadedAnimation:true];
 
 }

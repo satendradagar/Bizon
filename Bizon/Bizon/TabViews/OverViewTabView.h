@@ -20,4 +20,6 @@
 
 -(IBAction)didClickRefreshDetails:(id)sender;
 
+-(void)reloadContent;
+
 @end

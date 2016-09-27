@@ -66,6 +66,8 @@ Bizon *lastLoadedInstance;
 
 @property (nonatomic, strong) IBOutlet LogTabView *logView;
 
+@property (nonatomic, strong) IBOutlet OverViewTabView *overView;
+
 @end
 
 @implementation Bizon
@@ -75,6 +77,14 @@ Bizon *lastLoadedInstance;
     return lastLoadedInstance;
 }
 
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+
+            //       [BizonSecurityManager startAccess];
+    }
+    return self;
+}
 - (void)mainViewDidLoad
 {
     lastLoadedInstance = self;
@@ -99,9 +109,12 @@ Bizon *lastLoadedInstance;
         [_logView reloadContent];
         
     }
+    else if ([tabViewItem.identifier isEqualToString:@"2"]){
+        [_overView reloadContent];
+    }
 }
 
-- (void) didSelect{
+- (void) willSelect{
     NSLog(@"didSelect");
     [BizonSecurityManager startAccess];
     
