@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="Bizon">
             <connections>
                 <outlet property="_window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+                <outlet property="activationView" destination="9GK-ts-0mK" id="l4G-Oz-6Ug"/>
                 <outlet property="logView" destination="bUS-og-24S" id="vWI-LO-rCv"/>
                 <outlet property="overView" destination="MaD-NP-yB3" id="y5e-rT-3om"/>
             </connections>
@@ -260,8 +261,8 @@
                                             <rect key="frame" x="10" y="33" width="418" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <button verticalHuggingPriority="750" id="EAB-o6-dBV">
-                                                    <rect key="frame" x="155" y="187" width="134" height="20"/>
+                                                <button verticalHuggingPriority="750" misplaced="YES" id="EAB-o6-dBV">
+                                                    <rect key="frame" x="155" y="200" width="134" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="recessed" title="User Manual" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="XjD-sX-8MG">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -271,8 +272,8 @@
                                                         <action selector="didClickShowUserManual:" target="JLG-B0-dqe" id="Wbw-fm-jdN"/>
                                                     </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" id="rnO-zI-sTx">
-                                                    <rect key="frame" x="155" y="111" width="134" height="19"/>
+                                                <button verticalHuggingPriority="750" misplaced="YES" id="rnO-zI-sTx">
+                                                    <rect key="frame" x="155" y="124" width="134" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="recessed" title="Support Ticket" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="ApG-xP-jVZ">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -282,8 +283,8 @@
                                                         <action selector="didClickShowSupport:" target="JLG-B0-dqe" id="HGb-fF-wi2"/>
                                                     </connections>
                                                 </button>
-                                                <button verticalHuggingPriority="750" id="JKU-tN-7xo">
-                                                    <rect key="frame" x="155" y="146" width="134" height="19"/>
+                                                <button verticalHuggingPriority="750" misplaced="YES" id="JKU-tN-7xo">
+                                                    <rect key="frame" x="155" y="162" width="134" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="recessed" title="Knowledge Base" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" inset="2" id="BUc-VU-W9e">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

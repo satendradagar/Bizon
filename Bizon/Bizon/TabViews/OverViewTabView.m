@@ -20,6 +20,10 @@
 -(void)awakeFromNib{
 
     [super awakeFromNib];
+    self.connectionState.stringValue = @"";
+    self.graphicsCard.stringValue = @"";
+    self.macVersion.stringValue = @"";
+    self.macModel.stringValue = @"";
 }
 
 -(void)setInfo{
@@ -38,7 +42,7 @@
 
 -(void)reloadContent{
     
-    [self setInfo];
+//    [self setInfo];
 
 }
 

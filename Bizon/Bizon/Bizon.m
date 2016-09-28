@@ -68,6 +68,8 @@ Bizon *lastLoadedInstance;
 
 @property (nonatomic, strong) IBOutlet OverViewTabView *overView;
 
+@property (nonatomic, strong) IBOutlet ActivateTabView *activationView;
+
 @end
 
 @implementation Bizon
@@ -90,6 +92,10 @@ Bizon *lastLoadedInstance;
     lastLoadedInstance = self;
     [super mainViewDidLoad];
     lastLoadedInstance.reachability = [Reachability reachabilityForInternetConnection];
+    /*
+     Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the method reachabilityChanged will be called.
+     */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     [self.reachability startNotifier];
 
 }
@@ -126,5 +132,37 @@ Bizon *lastLoadedInstance;
     NSLog(@"willUnselect");
     
 }
+
+
+#pragma mark- Reachability handler
+
+/*!
+ * Called by Reachability whenever status changes.
+ */
+- (void) reachabilityChanged:(NSNotification *)note
+{
+//    Reachability* curReach = [note object];
+//    NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
+//    [self updateInterfaceWithReachability:curReach];
+    NSLog(@"reachabilityChanged: %@",note);
+    if (NO == [Bizon isInternetAvailable]) {
+        NSLog(@"Internet is off");
+        [_activationView internetWentDown];
+    }
+    else{
+        NSLog(@"Internet is on");
+    }
+
+}
+
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
+}
+
+
+
 
 @end

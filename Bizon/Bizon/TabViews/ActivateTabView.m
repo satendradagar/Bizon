@@ -10,6 +10,7 @@
 #import "TaskManager.h"
 #import "ProgressBarController.h"
 #import "Utilities.h"
+#import "Reachability.h"
 
 @implementation ActivateTabView
 {
@@ -18,6 +19,7 @@
     NSFileHandle *logFile ;
     NSDateFormatter *dateFormatter;
     BOOL isPerformingActivate;
+    Reachability *nvidiaReach;
 
 }
 - (void)drawRect:(NSRect)dirtyRect {
@@ -30,16 +32,31 @@
     [super awakeFromNib];
     isPerformingActivate = NO;
     logFile = [NSFileHandle fileHandleForWritingAtPath:[Utilities LogFilePath]];
+    [logFile seekToEndOfFile];
     dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"dd MMM yyyy HH:mm:ss z"];
-
+    nvidiaReach = [Reachability reachabilityWithHostName:@"www.nvidia.com"];
+    [nvidiaReach startNotifier];
 //    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
 //    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
 //    [dateFormatter setLocale:[NSLocale systemLocale]];
 
 }
 
+-(void)dealloc
+{
+    NSLog(@"Dealloc");
+    [logFile synchronizeFile];
+    [logFile closeFile];
+    logFile = nil;
+}
 #pragma mark - User Actions
+
+-(BOOL)isNvdiaReachable{
+    NetworkStatus netStatus = [nvidiaReach currentReachabilityStatus];
+    
+    return !(netStatus == NotReachable);
+}
 
 -(IBAction)didClickActivate:(id)sender{
     isPerformingActivate = YES;
@@ -49,6 +66,14 @@
         return;
     }
 
+    if (NO == [self isNvdiaReachable]) {
+        
+        [self showErrrorMessage:[NSString stringWithFormat:@"%d:%@",3060,@"Nvidia site is not available at the moment. Please try again later."]];
+        
+        return;
+    }
+    
+    
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
     progressController.progressBar.indeterminate = NO;
@@ -63,7 +88,8 @@
     } termination:^(STPrivilegedTask * task) {
         
         [weakSelf closeSheet];
-        
+//        [weakSelf LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],@"Activation finished."]];
+
     }] ;
     
 }
@@ -89,6 +115,7 @@
     } termination:^(STPrivilegedTask * task) {
         
         [weakSelf closeSheet];
+        [weakSelf LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],@"Uninstallation finished."]];
 
     }] ;
     
@@ -158,7 +185,8 @@
     } termination:^(STPrivilegedTask * task) {
         
         [weakSelf closeSheet];
-        
+        [weakSelf LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],@"Skip Drive finished."]];
+
     }] ;
     
 
@@ -166,12 +194,19 @@
 
 #pragma mark - Local methods
 
++ (NSString *)localizedMessageForKey:(NSString *)key{
+    
+    NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
+    
+    NSString *localized = NSLocalizedStringFromTableInBundle(key, @"Localizable", bundle, nil);
+    return localized;
+}
+
 - (NSString *)messageForServerMessage:(NSString *)msg
 {
   
     if (msg.length) {
         
-        NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
 //        msg = [msg substringFromIndex:msg.length -1];
         NSString *panelMsg = [NSString stringWithFormat:@"%ld",(long)[msg integerValue]];
         NSLog(@"msg: %@, panel: %@",msg,panelMsg);
@@ -179,24 +214,27 @@
             
             panelMsg = msg;
         }
-        NSString *localized = NSLocalizedStringFromTableInBundle(panelMsg, @"Localizable", bundle, nil);
+
+        NSString *localized = [ActivateTabView localizedMessageForKey:panelMsg];
+        
 //        NSString *localized = NSLocalizedString([msg substringToIndex:msg.length - 1],nil);
         
         NSLog(@"%@:%@",panelMsg ,localized);
 
         if (nil != localized) {
             
-            [self LogMessage:[NSString stringWithFormat:@"\n%@ [%@]: %@",[dateFormatter stringFromDate:[NSDate date]],panelMsg,localized]];
+//            [self LogMessage:[NSString stringWithFormat:@"\n%@ [%@]: %@",[dateFormatter stringFromDate:[NSDate date]],panelMsg,localized]];
             if ([localized isEqualToString:panelMsg]) {
                 
                 return nil;
             }
+//            [self LogMessage:[NSString stringWithFormat:@"\n%@ [%@]: %@",[dateFormatter stringFromDate:[NSDate date]],panelMsg,localized]];
 
             return localized;
         }
         else{
             
-            [self LogMessage:[NSString stringWithFormat:@"\n%@ %@",[dateFormatter stringFromDate:[NSDate date]],msg]];
+//            [self LogMessage:[NSString stringWithFormat:@"\n%@ %@",[dateFormatter stringFromDate:[NSDate date]],msg]];
             return nil;
         }
 
@@ -207,7 +245,7 @@
     
 -(void)LogMessage:(NSString *)msg
 {
-    [logFile writeData: [msg dataUsingEncoding: NSNEXTSTEPStringEncoding]];
+    [logFile writeData: [msg dataUsingEncoding: NSUTF8StringEncoding]];
 }
 
 -(void)handleCriticalActions:(NSString *)message{
@@ -232,6 +270,8 @@
                 [self didClickAuto:nil];
                 return;
             }
+            [self LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],@"Activation Completed."]];
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self showRestartActionSheet];
@@ -355,7 +395,8 @@
     alert.messageText = @"Error";
     alert.informativeText = message;
     NSButton *button = [alert addButtonWithTitle:@"OK"];
-   
+    [self LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],message]];
+
     NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
     NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
     alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
@@ -392,6 +433,15 @@
     progressController.warningImage.hidden = NO;
 
 //    [self closeSheet];
+}
+
+-(void)internetWentDown{
+    
+    if (isPerformingActivate) {
+        
+        [self showErrrorMessage:[NSString stringWithFormat:@"%d:%@",3000,@"Check your internet connection"]];
+
+    }
 }
 
 @end

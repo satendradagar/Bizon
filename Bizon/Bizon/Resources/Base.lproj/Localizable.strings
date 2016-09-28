@@ -30,7 +30,7 @@
 
 "3012" = "Thunderbolt device is connected, but no external GPUs detected.";
 
-"3013" = "Hot-plug the Thunderbolt cable and run the script again.";
+"3013" = "Hot-plug the Thunderbolt cable and press Activate button again.";
 
 "3014" = "Package name is not valid. Please check the URL address.";
 

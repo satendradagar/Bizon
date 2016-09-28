@@ -18,4 +18,6 @@
 
 -(IBAction)didClickSkip:(id)sender;
 
+-(void)internetWentDown;
+
 @end
