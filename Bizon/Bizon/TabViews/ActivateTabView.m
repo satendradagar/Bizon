@@ -318,7 +318,12 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                        [self closeSheetWithDelay];
 //                        progressController.label.stringValue = [NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized];
-                        [self showErrrorMessage:[NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized]];
+                        if (msgValue == 3021) {
+                            [self showErrrorMessage:localized andTitle:@"Activated"];
+                        }
+                        else{
+                            [self showErrrorMessage:[NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized]];
+                        }
                         
                     });
                     
@@ -418,25 +423,34 @@
     
 }
 
--(void)showErrrorMessage:(NSString *)message{
-    
+-(void)showErrrorMessage:(NSString *)message andTitle:(NSString *)title{
+
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Error";
+    alert.messageText = title;
     alert.informativeText = message;
     NSButton *button = [alert addButtonWithTitle:@"OK"];
     [self LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],message]];
-
+    
     NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
     NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
     alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
     
+    if ([title isEqualToString:@"Error"]) {
 
-    alert.alertStyle = 2;
+        alert.alertStyle = 2;
+
+    }
     NSInteger answer = [alert runModal];
     
     if (answer == NSAlertFirstButtonReturn) {
         
     }
+
+}
+
+-(void)showErrrorMessage:(NSString *)message{
+    
+    [self showErrrorMessage:message andTitle:@"Error"];
     
 }
 

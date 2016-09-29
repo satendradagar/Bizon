@@ -45,6 +45,8 @@
 "3019" = "Authentication cancelled";
 
 "3020" = "Nvidia site is not available at the moment. Please try again later.";
+"3021" = "Your system is already activated.";
+
 //"Checking IOPCITunnelCompatible keys...\n" = "Checking IOPCITunnelCompatible keys...\n";
 
 //"IOPCITunnelCompatible mods are valid." = "IOPCITunnelCompatible mods are valid.";
