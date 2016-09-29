@@ -55,7 +55,31 @@
 -(BOOL)isNvdiaReachable{
     NetworkStatus netStatus = [nvidiaReach currentReachabilityStatus];
     
-    return !(netStatus == NotReachable);
+    if (netStatus == NotReachable) {
+        return NO;
+    }
+    else{
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.nvidia.com"]];
+        [request setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50" forHTTPHeaderField:@"User-Agent"];
+    NSURLResponse *response = nil;
+    NSError *error=nil;
+    NSData *data=[[NSData alloc] initWithData:[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error]];
+    NSString* retVal = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"-%@",retVal);
+        // you can use retVal , ignore if you don't need.
+    NSInteger httpStatus = [((NSHTTPURLResponse *)response) statusCode];
+    NSLog(@"responsecode:%ld", (long)httpStatus);
+        // there will be various HTTP response code (status)
+        // you might concern with 404
+    if(httpStatus == 200)
+        {
+            return YES;
+            // do your job
+        }
+    else{
+        return NO;
+    }
+    }
 }
 
 -(IBAction)didClickActivate:(id)sender{
