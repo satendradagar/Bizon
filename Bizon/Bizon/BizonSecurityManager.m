@@ -43,7 +43,7 @@
 //    NSString *filePath = [[documentPath path] stringByAppendingPathComponent:scriptName];
 //    filePath = [filePath stringByAppendingPathExtension:@"dump"];
 //    [converted writeToFile:filePath atomically:YES];
-//
+//     return;
     NSLog(@"Nserror: %@",error);
     if (nil == error) {
         [converted writeToFile:decryptedPath atomically:YES];

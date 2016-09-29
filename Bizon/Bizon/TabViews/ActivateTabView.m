@@ -68,7 +68,7 @@
 
     if (NO == [self isNvdiaReachable]) {
         
-        [self showErrrorMessage:[NSString stringWithFormat:@"%d:%@",3060,@"Nvidia site is not available at the moment. Please try again later."]];
+        [self showErrrorMessage:[NSString stringWithFormat:@"3020:%@",[ActivateTabView localizedMessageForKey:@"3020"]]];
         
         return;
     }
@@ -279,7 +279,11 @@
             });
             
         }
-        else{
+        else if (NSNotFound != [single rangeOfString:@"Failed to connect to "].location){//Received failed to connect
+            [self closeSheetWithDelay];
+            [self showErrrorMessage:[NSString stringWithFormat:@"3020:%@",[ActivateTabView localizedMessageForKey:@"3020"]]];
+        }
+        else {
             
             NSUInteger msgValue = [single integerValue];
             if (msgValue > 3000 && msgValue < 4000) {//warning
