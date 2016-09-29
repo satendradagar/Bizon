@@ -279,9 +279,10 @@
             });
             
         }
-        else if (NSNotFound != [single rangeOfString:@"Failed to connect to "].location){//Received failed to connect
+        else if (NSNotFound != [message rangeOfString:@"Failed to connect to "].location){//Received failed to connect
             [self closeSheetWithDelay];
             [self showErrrorMessage:[NSString stringWithFormat:@"3020:%@",[ActivateTabView localizedMessageForKey:@"3020"]]];
+            break;
         }
         else {
             
