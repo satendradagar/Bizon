@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>Z-Manager</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
@@ -21,13 +21,13 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016 Satendra Singh. All rights reserved.</string>
+	<string>Copyright © 2016 TechnoStore LLC. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>Bizon</string>
 	<key>NSPrefPaneIconFile</key>
 	<string>BizonBox.png</string>
 	<key>NSPrefPaneIconLabel</key>
-	<string>Bizon Box</string>
+	<string>BizonBox</string>
 	<key>NSPrincipalClass</key>
 	<string>Bizon</string>
 </dict>

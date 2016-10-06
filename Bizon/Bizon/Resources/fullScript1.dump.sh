@@ -753,7 +753,7 @@ function Main()
 
 			if [[ "$web_driver_url" == "" && "$download_url" != "" ]]
 			then
-				echo "Driver ["$download_version"] found from:\n"$download_url
+#				echo "Driver ["$download_version"] found from:\n"$download_url
 				DoYouWantToDownloadThisDriver
 			fi
 

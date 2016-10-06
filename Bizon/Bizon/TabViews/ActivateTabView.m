@@ -16,7 +16,7 @@
 {
 
     __block ProgressBarController *progressController;
-    NSFileHandle *logFile ;
+//    NSFileHandle *logFile ;
     NSDateFormatter *dateFormatter;
     BOOL isPerformingActivate;
     Reachability *nvidiaReach;
@@ -31,8 +31,8 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     isPerformingActivate = NO;
-    logFile = [NSFileHandle fileHandleForWritingAtPath:[Utilities LogFilePath]];
-    [logFile seekToEndOfFile];
+//    logFile = [NSFileHandle fileHandleForWritingAtPath:[Utilities LogFilePath]];
+//    [logFile seekToEndOfFile];
     dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"dd MMM yyyy HH:mm:ss z"];
     nvidiaReach = [Reachability reachabilityWithHostName:@"www.nvidia.com"];
@@ -46,9 +46,9 @@
 -(void)dealloc
 {
     NSLog(@"Dealloc");
-    [logFile synchronizeFile];
-    [logFile closeFile];
-    logFile = nil;
+//    [logFile synchronizeFile];
+//    [logFile closeFile];
+//    logFile = nil;
 }
 #pragma mark - User Actions
 
@@ -92,7 +92,7 @@
 
     if (NO == [self isNvdiaReachable]) {
         
-        [self showErrrorMessage:[NSString stringWithFormat:@"3020:%@",[ActivateTabView localizedMessageForKey:@"3020"]]];
+        [self showErrrorMessage:[NSString stringWithFormat:@"%@ Error code:3020",[ActivateTabView localizedMessageForKey:@"3020"]]];
         
         return;
     }
@@ -103,7 +103,7 @@
     progressController.progressBar.indeterminate = NO;
     
     
-    [TaskManager runScript:@"fullScript" withArgs:nil ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase" withArgs:nil ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
@@ -130,7 +130,7 @@
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
     
-    [TaskManager runScript:@"fullScript" withArgs:@[@"-uninstall"] ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase" withArgs:@[@"-restore"] ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
 
@@ -159,7 +159,7 @@
     __block typeof(self) weakSelf = self;
 //    [self showActionSheet];
 //
-    [TaskManager runScript:@"fullScript" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
@@ -201,7 +201,7 @@
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
     
-    [TaskManager runScript:@"fullScript" withArgs:@[@"-skipdriver"] ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase" withArgs:@[@"-nodrv"] ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
@@ -269,7 +269,16 @@
     
 -(void)LogMessage:(NSString *)msg
 {
-    [logFile writeData: [msg dataUsingEncoding: NSUTF8StringEncoding]];
+//    [logFile seekToFileOffset:0];
+//    [logFile writeData: [msg dataUsingEncoding: NSUTF8StringEncoding]];
+//    [logFile writeData: [@"\n" dataUsingEncoding: NSUTF8StringEncoding]];
+//    NSData *remainingData = [logFile availableData];
+//    [logFile seekToFileOffset:0];
+//    [logFile writeData: [msg dataUsingEncoding: NSUTF8StringEncoding]];
+//    [logFile writeData:remainingData];
+    NSString *current = [NSString stringWithContentsOfFile:[Utilities LogFilePath] encoding:NSNEXTSTEPStringEncoding error:nil];
+    NSString *final = [msg stringByAppendingString:current];
+    [final writeToFile:[Utilities LogFilePath] atomically:YES encoding:NSNEXTSTEPStringEncoding error:nil];
 }
 
 -(void)handleCriticalActions:(NSString *)message{
@@ -305,7 +314,7 @@
         }
         else if (NSNotFound != [message rangeOfString:@"Failed to connect to "].location){//Received failed to connect
             [self closeSheetWithDelay];
-            [self showErrrorMessage:[NSString stringWithFormat:@"3020:%@",[ActivateTabView localizedMessageForKey:@"3020"]]];
+            [self showErrrorMessage:[NSString stringWithFormat:@"%@ Error code:3020",[ActivateTabView localizedMessageForKey:@"3020"]]];
             break;
         }
         else {
@@ -322,7 +331,7 @@
                             [self showErrrorMessage:localized andTitle:@"Activated"];
                         }
                         else{
-                            [self showErrrorMessage:[NSString stringWithFormat:@"%lu:%@",(unsigned long)msgValue,localized]];
+                            [self showErrrorMessage:[NSString stringWithFormat:@"%@ Error code:%lu",localized,(unsigned long)msgValue]];
                         }
                         
                     });
@@ -428,6 +437,16 @@
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = title;
     alert.informativeText = message;
+    
+        //Get all views present on the NSAlert content view. 5th element will be a NSTextField object holding the Message text.
+     NSArray* views = [[[alert window] contentView] subviews];
+    
+        //Create a font.
+    NSFont *font = [NSFont boldSystemFontOfSize:[NSFont systemFontSize]];
+    
+        //Set font for Message text
+    [[views objectAtIndex:5] setFont:font];
+    [[views objectAtIndex:5]setStringValue:message];
     NSButton *button = [alert addButtonWithTitle:@"OK"];
     [self LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],message]];
     
@@ -472,7 +491,7 @@
 
 //    progressController.label.stringValue = [NSString stringWithFormat:@"%d:%@",3000,@"No Internet Connection."];
 //    [self closeSheetWithDelay];
-    [self showErrrorMessage:[NSString stringWithFormat:@"%d:%@",3000,@"No Internet Connection."]];
+    [self showErrrorMessage:[NSString stringWithFormat:@"%@ Error code:%d",@"No Internet Connection.",3000]];
     progressController.warningImage.hidden = NO;
 
 //    [self closeSheet];
@@ -482,7 +501,7 @@
     
     if (isPerformingActivate) {
         
-        [self showErrrorMessage:[NSString stringWithFormat:@"%d:%@",3000,@"Check your internet connection"]];
+        [self showErrrorMessage:[NSString stringWithFormat:@"%@ Error code:%d",@"No Internet Connection.",3000]];
 
     }
 }

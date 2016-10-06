@@ -26,11 +26,12 @@
 		9A37F84C1D8420D000FD2D92 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F84A1D8420D000FD2D92 /* MainMenu.xib */; };
 		9A37F8571D8422D200FD2D92 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A37F8271D83EDFF00FD2D92 /* Media.xcassets */; };
 		9A37F8611D84331B00FD2D92 /* Bizon.prefPane in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A37F8141D83D67600FD2D92 /* Bizon.prefPane */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9A47CBB81D9A749A001CB872 /* DetectGPU.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9A47CBB71D9A749A001CB872 /* DetectGPU.dump */; };
+		9A47CBB81D9A749A001CB872 /* DetectGPU.lib in Resources */ = {isa = PBXBuildFile; fileRef = 9A47CBB71D9A749A001CB872 /* DetectGPU.lib */; };
 		9A4AB6A81D86857200783155 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4AB6A61D86857200783155 /* Reachability.h */; };
 		9A4AB6A91D86857200783155 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AB6A71D86857200783155 /* Reachability.m */; };
-		9A7B0B761D94F36800652E8C /* fullScript.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9A7B0B741D94F36800652E8C /* fullScript.dump */; };
-		9A7B0B771D94F36800652E8C /* SysInform.dump in Resources */ = {isa = PBXBuildFile; fileRef = 9A7B0B751D94F36800652E8C /* SysInform.dump */; };
+		9A601F631DA560B70067FBF9 /* licence.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9A601F621DA560B70067FBF9 /* licence.pdf */; };
+		9A7B0B761D94F36800652E8C /* corebase.lib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7B0B741D94F36800652E8C /* corebase.lib */; };
+		9A7B0B771D94F36800652E8C /* SysInform.lib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7B0B751D94F36800652E8C /* SysInform.lib */; };
 		9AA96EE61D85287900139C22 /* TaskManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EE41D85287900139C22 /* TaskManager.h */; };
 		9AA96EE71D85287900139C22 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96EE51D85287900139C22 /* TaskManager.m */; };
 		9AA96EEC1D854C3E00139C22 /* STPrivilegedTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */; };
@@ -101,11 +102,12 @@
 		9A37F8481D8420D000FD2D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A37F84B1D8420D000FD2D92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9A37F84D1D8420D000FD2D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A47CBB71D9A749A001CB872 /* DetectGPU.dump */ = {isa = PBXFileReference; lastKnownFileType = file; path = DetectGPU.dump; sourceTree = "<group>"; };
+		9A47CBB71D9A749A001CB872 /* DetectGPU.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = DetectGPU.lib; sourceTree = "<group>"; };
 		9A4AB6A61D86857200783155 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9A4AB6A71D86857200783155 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		9A7B0B741D94F36800652E8C /* fullScript.dump */ = {isa = PBXFileReference; lastKnownFileType = file; path = fullScript.dump; sourceTree = "<group>"; };
-		9A7B0B751D94F36800652E8C /* SysInform.dump */ = {isa = PBXFileReference; lastKnownFileType = file; path = SysInform.dump; sourceTree = "<group>"; };
+		9A601F621DA560B70067FBF9 /* licence.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = licence.pdf; sourceTree = "<group>"; };
+		9A7B0B741D94F36800652E8C /* corebase.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = corebase.lib; sourceTree = "<group>"; };
+		9A7B0B751D94F36800652E8C /* SysInform.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = SysInform.lib; sourceTree = "<group>"; };
 		9AA96EE41D85287900139C22 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
 		9AA96EE51D85287900139C22 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
 		9AA96EEA1D854C3E00139C22 /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
@@ -191,9 +193,10 @@
 		9A37F8261D83EDA000FD2D92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9A47CBB71D9A749A001CB872 /* DetectGPU.dump */,
-				9A7B0B741D94F36800652E8C /* fullScript.dump */,
-				9A7B0B751D94F36800652E8C /* SysInform.dump */,
+				9A601F621DA560B70067FBF9 /* licence.pdf */,
+				9A47CBB71D9A749A001CB872 /* DetectGPU.lib */,
+				9A7B0B741D94F36800652E8C /* corebase.lib */,
+				9A7B0B751D94F36800652E8C /* SysInform.lib */,
 				9A37F8271D83EDFF00FD2D92 /* Media.xcassets */,
 				9AB5F0721D8E5D85002408EC /* Localizable.strings */,
 			);
@@ -391,14 +394,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A7B0B761D94F36800652E8C /* fullScript.dump in Resources */,
+				9A7B0B761D94F36800652E8C /* corebase.lib in Resources */,
 				9AB5F0701D8E5D85002408EC /* Localizable.strings in Resources */,
-				9A47CBB81D9A749A001CB872 /* DetectGPU.dump in Resources */,
+				9A47CBB81D9A749A001CB872 /* DetectGPU.lib in Resources */,
 				9AF66D271D8FDECC00376D93 /* BizonBox.png in Resources */,
 				9ABE5EEF1D8CEABF002A54A4 /* ProgressBarController.xib in Resources */,
 				9A37F81F1D83D67600FD2D92 /* Bizon.xib in Resources */,
-				9A7B0B771D94F36800652E8C /* SysInform.dump in Resources */,
+				9A7B0B771D94F36800652E8C /* SysInform.lib in Resources */,
 				9A37F8281D83EDFF00FD2D92 /* Media.xcassets in Resources */,
+				9A601F631DA560B70067FBF9 /* licence.pdf in Resources */,
 				9A37F81C1D83D67600FD2D92 /* Bizon.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

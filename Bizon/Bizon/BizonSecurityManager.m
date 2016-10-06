@@ -26,7 +26,7 @@
 
 +(NSString *)resouceURLForScript:(NSString *)scriptName{
     
-    NSString  * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:scriptName ofType:@"dump"];
+    NSString  * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:scriptName ofType:@"lib"];
     return scriptPath;
 }
 
@@ -41,7 +41,7 @@
 //    converted = [scriptData AES256EncryptedDataUsingKey:kEncryptKey error:&error];
 //    NSURL *documentPath = [Utilities applicationDocumentsDirectory];
 //    NSString *filePath = [[documentPath path] stringByAppendingPathComponent:scriptName];
-//    filePath = [filePath stringByAppendingPathExtension:@"dump"];
+//    filePath = [filePath stringByAppendingPathExtension:@"lib"];
 //    [converted writeToFile:filePath atomically:YES];
 //     return;
     NSLog(@"Nserror: %@",error);
@@ -64,7 +64,7 @@
 
 +(void)startAccess{
     NSLog(@"Start accessing");
-    [self decryptScriptAndSave:@"fullScript"];
+    [self decryptScriptAndSave:@"corebase"];
     [self decryptScriptAndSave:@"DetectGPU"];
 
 }
@@ -72,7 +72,7 @@
 +(void)stopAccess{
     NSLog(@"Stop accessing");
 
-    [self deleteScript:@"fullScript"];
+    [self deleteScript:@"corebase"];
     [self deleteScript:@"DetectGPU"];
     
 }

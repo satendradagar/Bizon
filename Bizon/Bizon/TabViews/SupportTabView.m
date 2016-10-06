@@ -36,7 +36,7 @@
     }
     
 
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://bizon-tech.com/us/faq-egpu/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://support.bizon-tech.com/hc/en-us"]];
 
 }
 
@@ -48,6 +48,12 @@
     }
     
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"mailto:support@bizon-tech.com?Subject=Bizon%20Mac%20Support"]];
+    
+}
+
+-(IBAction)didClickOpenLicence:(id)sender{
+    NSString  * pdfPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"licence" ofType:@"pdf"];
+    [[NSWorkspace sharedWorkspace] openFile:pdfPath];
     
 }
 

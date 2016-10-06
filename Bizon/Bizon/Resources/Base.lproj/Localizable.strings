@@ -3,10 +3,8 @@
   Bizon
 
   Created by Satendra Singh on 17/09/16.
-  Copyright © 2016 Satendra Singh. All rights reserved.
+  Copyright © 2016 TechnoStore LLC. All rights reserved.
 */
-
-//"3001" = "Missing IOPCITunnelCompatible keys.";
 
 "3002" = "No Nvidia web driver detected.";
 
@@ -25,8 +23,6 @@
 "3009" = "Doesn't support versions of OS X earlier than 10.9.5";
 
 "3010" = "Only Kepler architecture cards are supported on OS X 10.9.5.";
-
-//"3011" = "Looking for Driver...";
 
 "3012" = "Thunderbolt device is connected, but no external GPUs detected.";
 
@@ -47,25 +43,6 @@
 "3020" = "Nvidia site is not available at the moment. Please try again later.";
 "3021" = "Your system is already activated.";
 
-//"Checking IOPCITunnelCompatible keys...\n" = "Checking IOPCITunnelCompatible keys...\n";
-
-//"IOPCITunnelCompatible mods are valid." = "IOPCITunnelCompatible mods are valid.";
-//"You are running official Nvidia driver." = "You are running official Nvidia driver.";
-
-    //"Automate-eGPU uninstall ready." = "Automate-eGPU uninstall ready.";
-
-//"Board-id added." = "Board-id added.";
-
-//"Your system is eGPU enabled and Nvidia web driver is up to date." = "Your system is eGPU enabled and Nvidia web driver is up to date.";
-
-//"Background services unloaded." = "Background services unloaded.";
-
-//"Mac board-id found." = "Mac board-id found.";
-
-//"Searching for matching driver...\n" = "Looking for Driver...\n";
-
-    //"IOPCITunnelCompatible mods done." = "IOPCITunnelCompatible mods done.";
-
 "4001" = "Installing....";
 
 "4002" = "Reinstalling....";
@@ -75,8 +52,6 @@
 "4004" = "Reinstalling....";
 
 "4005" = "Downloading....";
-
-//"4006" = "Driver downloaded.";
 
 "4007" = "Looking for Driver....";
 
