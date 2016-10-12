@@ -2,31 +2,30 @@
   Localization.strings
   Bizon
 
-  Created by Satendra Singh on 17/09/16.
   Copyright © 2016 TechnoStore LLC. All rights reserved.
 */
 
-"3002" = "No Nvidia web driver detected.";
+"3002" = "No NVIDIA web driver detected.";
 
 "3003" = "Controller not found.";
 
 "3004" = "Accelerator not found.";
 
-"3005" = "Driver not found. Nvidia may have changed their web driver search service.";
+"3005" = "Driver not found.";
 
-"3006" = "Operating system id not found. Nvidia may have changed their web driver search service.";
+"3006" = "Operating system id not found.";
 
 "3007" = "Operating system id found.";
 
-"3008" = "Boot into recovery partition and type: csrutil disable";
+"3008" = "Boot into recovery partition, run terminal and type: csrutil disable";
 
-"3009" = "Doesn't support versions of OS X earlier than 10.9.5";
+"3009" = "OS X version doesn't supported.";
 
-"3010" = "Only Kepler architecture cards are supported on OS X 10.9.5.";
+"3010" = "GPU is not compatible.";
 
-"3012" = "Thunderbolt device is connected, but no external GPUs detected.";
+"3012" = "BizonBOX is not detected.";
 
-"3013" = "Hot-plug the Thunderbolt cable and press Activate button again.";
+"3013" = "Connect BizonBOX now and press \"Activate\" button again.";
 
 "3014" = "Package name is not valid. Please check the URL address.";
 
@@ -40,22 +39,22 @@
 
 "3019" = "Authentication cancelled";
 
-"3020" = "Nvidia site is not available at the moment. Please try again later.";
-"3021" = "Your system is already activated.";
+"3020" = "NVIDIA website is not available. Please try again later.";
+
+"3021" = "Your system has been already activated.";
 
 "4001" = "Installing....";
 
 "4002" = "Reinstalling....";
 
-"4003" = "Download....";
+"4003" = "Downloading....";
 
 "4004" = "Reinstalling....";
 
 "4005" = "Downloading....";
 
-"4007" = "Looking for Driver....";
+"4007" = "Looking for Driver...";
 
 "4008" = "Installing....";
 
-"4009" = "All ready. Please restart the Mac.";
-
+"4009" = "Activation completed. Please restart your Mac.";

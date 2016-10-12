@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
@@ -266,7 +266,7 @@
                                                 <button verticalHuggingPriority="750" misplaced="YES" id="rnO-zI-sTx">
                                                     <rect key="frame" x="155" y="145" width="134" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="recessed" title="Support Ticket" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="ApG-xP-jVZ">
+                                                    <buttonCell key="cell" type="recessed" title="Contact support" bezelStyle="recessed" image="NSFollowLinkFreestandingTemplate" imagePosition="left" alignment="left" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="ApG-xP-jVZ">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="systemMedium" size="12"/>
                                                     </buttonCell>
