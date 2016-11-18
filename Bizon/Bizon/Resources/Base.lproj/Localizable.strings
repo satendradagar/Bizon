@@ -1,21 +1,20 @@
-/* 
-  Localization.strings
-  Bizon
+/*
+ Localization.strings
+ Bizon
+ 
+ Copyright © 2016 TechnoStore LLC. All rights reserved.
+ "3002" = "Web driver is not detected.";
+ */
 
-  Copyright © 2016 TechnoStore LLC. All rights reserved.
-*/
+"3003" = "Error 3003.";
 
-"3002" = "No NVIDIA web driver detected.";
+"3004" = "GPU not found.";
 
-"3003" = "Controller not found.";
+"3005" = "Driver is not available.";
 
-"3004" = "Accelerator not found.";
+"3006" = "OS ID unknown.";
 
-"3005" = "Driver not found.";
-
-"3006" = "Operating system id not found.";
-
-"3007" = "Operating system id found.";
+"3007" = "OS ID is ok.";
 
 "3008" = "Boot into recovery partition, run terminal and type: csrutil disable";
 
@@ -27,21 +26,21 @@
 
 "3013" = "Connect BizonBOX now and press \"Activate\" button again.";
 
-"3014" = "Package name is not valid. Please check the URL address.";
+"3014" = "Error 3014.";
 
-"3015" = "URL is empty.";
+"3015" = "Error 3015.";
 
-"3016" = "URL doesn't exist.";
+"3016" = "Error 3016.";
 
-"3017" = "Please install one by one.";
+"3017" = "Please activate only one BizonBOX at one time.";
 
-"3018" = "Application support path not found. Please install first.";
+"3018" = "Error 3018.";
 
-"3019" = "Authentication cancelled";
+"3019" = "Authentication cancelled.";
 
 "3020" = "NVIDIA website is not available. Please try again later.";
 
-"3021" = "Your system has been already activated.";
+"3021" = "BizonBOX has been already activated.";
 
 "4001" = "Installing....";
 
