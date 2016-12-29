@@ -18,7 +18,7 @@
     
     NSURL *documentPath = [Utilities applicationDocumentsDirectory];
     NSString *filePath = [[documentPath path] stringByAppendingPathComponent:resource];
-    filePath = [filePath stringByAppendingPathExtension:@"sh"];
+//    filePath = [filePath stringByAppendingPathExtension:@"sh"];
     NSLog(@"Decryption Path : %@",filePath);
     return filePath;
     
@@ -31,7 +31,7 @@
 }
 
 +(void) decryptScriptAndSave:(NSString *)scriptName{
-    NSString *encryptedPath = [self resouceURLForScript:scriptName];
+    NSString *encryptedPath = [self resouceURLForScript:[scriptName stringByDeletingPathExtension]];
     NSString *decryptedPath = [self decryptedPathForResourceName:scriptName];
     NSData *scriptData = [NSData dataWithContentsOfFile:encryptedPath];
     NSError *error = nil;
@@ -40,7 +40,7 @@
 //    scriptData = [NSData dataWithContentsOfFile:decryptedPath];
 //    converted = [scriptData AES256EncryptedDataUsingKey:kEncryptKey error:&error];
 //    NSURL *documentPath = [Utilities applicationDocumentsDirectory];
-//    NSString *filePath = [[documentPath path] stringByAppendingPathComponent:scriptName];
+//    NSString *filePath = [[documentPath path] stringByAppendingPathComponent:[scriptName stringByDeletingPathExtension]];
 //    filePath = [filePath stringByAppendingPathExtension:@"lib"];
 //    [converted writeToFile:filePath atomically:YES];
 //     return;
@@ -64,16 +64,18 @@
 
 +(void)startAccess{
     NSLog(@"Start accessing");
-    [self decryptScriptAndSave:@"corebase"];
-    [self decryptScriptAndSave:@"DetectGPU"];
+    [self decryptScriptAndSave:@"corebase.sh"];
+    [self decryptScriptAndSave:@"DetectGPU.sh"];
+    [self decryptScriptAndSave:@"tb3-enabler.py"];
 
 }
 
 +(void)stopAccess{
     NSLog(@"Stop accessing");
 
-    [self deleteScript:@"corebase"];
-    [self deleteScript:@"DetectGPU"];
-    
+    [self deleteScript:@"corebase.sh"];
+    [self deleteScript:@"DetectGPU.sh"];
+    [self deleteScript:@"tb3-enabler.py"];
+
 }
 @end

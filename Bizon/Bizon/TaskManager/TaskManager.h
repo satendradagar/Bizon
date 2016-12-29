@@ -17,5 +17,7 @@
                     withArguments:(NSArray *)arguments
                            output:(NSString **)output
                  errorDescription:(NSString **)errorDescription;
++ (void ) runPythonScript:(NSString *) scriptName withArgs:(NSArray *)args ResponseHandling:(void (^)(NSString *message)) responseBlock termination: (void (^)(STPrivilegedTask *)) terminate;
+
 
 @end

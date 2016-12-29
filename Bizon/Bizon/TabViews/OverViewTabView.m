@@ -49,7 +49,7 @@
 -(BOOL)getConnectedState{
     
     NSString *output = nil;
-    [TaskManager runScript:@"DetectGPU" withArguments:nil output:&output errorDescription:nil];
+    [TaskManager runScript:@"DetectGPU.sh" withArguments:nil output:&output errorDescription:nil];
     if (nil != output) {
         NSLog(@"output = %@",output);
         return [output boolValue];

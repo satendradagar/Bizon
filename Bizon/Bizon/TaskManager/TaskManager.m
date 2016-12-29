@@ -103,6 +103,43 @@
     
 }
 
+
++ (void ) runPythonScript:(NSString *) scriptName withArgs:(NSArray *)args ResponseHandling:(void (^)(NSString *message)) responseBlock termination: (void (^)(STPrivilegedTask *)) terminate{
+    
+    __block NSPipe *outPipe = [NSPipe pipe];
+    NSString  * scriptPath = [BizonSecurityManager decryptedPathForResourceName:scriptName];
+    STPrivilegedTask * hiddenTask = [STPrivilegedTask new];
+    [hiddenTask setLaunchPath:@"/usr/bin/python"];
+    [hiddenTask setCurrentDirectoryPath:[[NSBundle bundleForClass:[self class]] resourcePath]];
+    
+    NSMutableArray *totalArgs = [NSMutableArray arrayWithObjects:scriptPath, nil];
+    if (nil != args) {
+        
+        [totalArgs addObjectsFromArray:args];
+        
+    }
+    [hiddenTask setTerminationHandler:terminate];
+    [hiddenTask setArguments:totalArgs];
+        //set it off
+    OSStatus err = [hiddenTask launchWithResponseHandling:responseBlock];
+    if (err != errAuthorizationSuccess) {
+        if (err == errAuthorizationCanceled) {
+            responseBlock(@"3019");
+            terminate(hiddenTask);
+            
+            NSLog(@"User cancelled");
+            return;
+        }  else {
+            responseBlock([NSString stringWithFormat:@"Something went wrong: %d", (int)err]);
+            terminate(hiddenTask);
+            NSLog(@"Something went wrong: %d", (int)err);
+                // For error codes, see http://www.opensource.apple.com/source/libsecurity_authorization/libsecurity_authorization-36329/lib/Authorization.h
+        }
+    }
+    
+    
+}
+
 + (BOOL) runScript:(NSString*)scriptName
                      withArguments:(NSArray *)arguments
                             output:(NSString **)output

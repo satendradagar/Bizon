@@ -52,6 +52,35 @@
 }
 #pragma mark - User Actions
 
+-(IBAction)enableThunderbolt3:(id)sender{
+    
+//    isPerformingActivate = NO;
+//
+//    if (NO == [Utilities isConnected]) {
+//        [self showNoInternetAlert];
+//        return;
+//    }
+//    
+    __block typeof(self) weakSelf = self;
+    [self showActionSheet];
+    
+    [TaskManager runPythonScript:@"tb3-enabler.py" withArgs:@[@"apply"] ResponseHandling:^(NSString *message) {
+        
+            //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
+//        [weakSelf handleCriticalActions:message];
+        
+        [weakSelf didClickActivate:sender];
+        
+    } termination:^(STPrivilegedTask * task) {
+        
+        [weakSelf closeSheet];
+        [weakSelf LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],@"Skip Drive finished."]];
+        
+    }] ;
+    
+    
+}
+
 -(BOOL)isNvdiaReachable{
     NetworkStatus netStatus = [nvidiaReach currentReachabilityStatus];
     
@@ -103,7 +132,7 @@
     progressController.progressBar.indeterminate = NO;
     
     
-    [TaskManager runScript:@"corebase" withArgs:nil ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase.sh" withArgs:nil ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
@@ -130,7 +159,7 @@
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
     
-    [TaskManager runScript:@"corebase" withArgs:@[@"-restore"] ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase.sh" withArgs:@[@"-restore"] ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
 
@@ -159,7 +188,7 @@
     __block typeof(self) weakSelf = self;
 //    [self showActionSheet];
 //
-    [TaskManager runScript:@"corebase" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase.sh" withArgs:@[@"-a"] ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
@@ -201,7 +230,7 @@
     __block typeof(self) weakSelf = self;
     [self showActionSheet];
     
-    [TaskManager runScript:@"corebase" withArgs:@[@"-nodrv"] ResponseHandling:^(NSString *message) {
+    [TaskManager runScript:@"corebase.sh" withArgs:@[@"-nodrv"] ResponseHandling:^(NSString *message) {
         
 //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
         [weakSelf handleCriticalActions:message];
