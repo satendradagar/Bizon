@@ -25,7 +25,7 @@
         return;
     }
     
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://bizon-tech.com/bizonbox_guide.pdf"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://bizon-tech.com/bizonbox2s_guide.pdf"]];
 }
 
 -(IBAction)didClickKnowledgeBase:(id)sender{
