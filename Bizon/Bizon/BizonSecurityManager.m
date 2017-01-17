@@ -36,7 +36,7 @@
     NSData *scriptData = [NSData dataWithContentsOfFile:encryptedPath];
     NSError *error = nil;
     NSData *converted = [scriptData decryptedAES256DataUsingKey:kEncryptKey error:&error];
-    
+/* code to decrypt the data */
 //    scriptData = [NSData dataWithContentsOfFile:decryptedPath];
 //    converted = [scriptData AES256EncryptedDataUsingKey:kEncryptKey error:&error];
 //    NSURL *documentPath = [Utilities applicationDocumentsDirectory];
