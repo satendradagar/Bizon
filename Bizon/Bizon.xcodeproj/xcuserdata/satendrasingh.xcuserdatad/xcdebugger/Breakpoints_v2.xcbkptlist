@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "+runScript:withArgs:"
-            landmarkType = "5">
+            landmarkName = "+runScript:withArgs:ResponseHandling:termination:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,8 +41,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "+runScript:withArgs:"
-            landmarkType = "5">
+            landmarkName = "+runScript:withArgs:ResponseHandling:termination:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -57,8 +57,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "+runScriptAsAdministrator:withArguments:output:errorDescription:"
-            landmarkType = "5">
+            landmarkName = "+runScript:withArguments:output:errorDescription:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
