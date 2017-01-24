@@ -325,7 +325,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="kuo-lk-LQA">
                                 <rect key="frame" x="71" y="41" width="122" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version 4.5.1" id="IcM-xr-q38">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version 4.5.3" id="IcM-xr-q38">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
