@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>4.5.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>5</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 TechnoStore LLC. All rights reserved.</string>
 	<key>NSMainNibFile</key>

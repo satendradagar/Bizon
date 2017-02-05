@@ -66,21 +66,21 @@
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="pLF-tv-AMc">
                                                     <rect key="frame" x="26" y="285" width="388" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Press &quot;Activate&quot; to start BIZON BOX activation process." id="pzP-Ij-2Jz">
+                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Press &quot;Step 1&quot; button to start BIZON BOX activation process." id="pzP-Ij-2Jz">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <button verticalHuggingPriority="750" misplaced="YES" id="sGN-AF-iYZ">
-                                                    <rect key="frame" x="115" y="141" width="209" height="68"/>
+                                                <button verticalHuggingPriority="750" misplaced="YES" tag="1" id="sGN-AF-iYZ">
+                                                    <rect key="frame" x="115" y="184" width="209" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="Activate" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KBk-1k-0JX">
+                                                    <buttonCell key="cell" type="smallSquare" title="Step 1" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KBk-1k-0JX">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system" size="29"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="didClickActivate:" target="9GK-ts-0mK" id="skc-Mx-dqy"/>
+                                                        <action selector="enableThunderbolt3:" target="9GK-ts-0mK" id="W5r-R6-dUt"/>
                                                     </connections>
                                                 </button>
                                                 <button verticalHuggingPriority="750" misplaced="YES" id="mCc-2z-6DU">
@@ -103,6 +103,17 @@
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="didClickRestore:" target="9GK-ts-0mK" id="ayX-eg-WTX"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" misplaced="YES" tag="2" id="6VR-Qi-9hb">
+                                                    <rect key="frame" x="116" y="98" width="209" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="smallSquare" title="Step 2" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fpc-IB-yRh">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system" size="29"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="didClickActivate:" target="9GK-ts-0mK" id="myh-uk-bP9"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -325,7 +336,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="kuo-lk-LQA">
                                 <rect key="frame" x="71" y="40" width="122" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version 4.5.3" id="IcM-xr-q38">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version 4.5.4" id="IcM-xr-q38">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

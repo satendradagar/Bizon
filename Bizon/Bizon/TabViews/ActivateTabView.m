@@ -65,16 +65,19 @@
     [self showActionSheet];
     
     [TaskManager runPythonScript:@"tb3-enabler.py" withArgs:@[@"apply"] ResponseHandling:^(NSString *message) {
-        
+        NSLog(@"message: %@",message);
             //        progressController.label.stringValue = [NSString stringWithFormat:@"%@:%@",message,[self messageForServerMessage:message]];
 //        [weakSelf handleCriticalActions:message];
         
-        [weakSelf didClickActivate:sender];
+//        [weakSelf closeSheet];
+        
         
     } termination:^(STPrivilegedTask * task) {
         
         [weakSelf closeSheet];
-        [weakSelf LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],@"Skip Drive finished."]];
+        [weakSelf showTB3EnablerRestartActionSheet];
+
+        [weakSelf LogMessage:[NSString stringWithFormat:@"\n%@  %@",[dateFormatter stringFromDate:[NSDate date]],@"TB3 Enabler finished."]];
         
     }] ;
     
@@ -439,6 +442,35 @@
     alert.informativeText = @"Please note that In order to complete the installation process, you need to restart Your Mac Machine";
     NSButton *button = [alert addButtonWithTitle:@"Restart Now"];
     [alert addButtonWithTitle:@"Restart Later"];
+    [button becomeFirstResponder];
+    
+    NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
+    NSString *imagePath = [bundle pathForResource:@"BizonBox" ofType:@"png"];
+    alert.icon = [[NSImage alloc] initWithContentsOfFile:imagePath];
+    
+    NSInteger answer = [alert runModal];
+    
+    if (answer == NSAlertFirstButtonReturn) {
+        
+        NSString *scriptAction = @"restart"; // @"restart"/@"shut down"/@"sleep"/@"log out"
+        NSString *scriptSource = [NSString stringWithFormat:@"tell application \"Finder\" to %@", scriptAction];
+        NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSource];
+        NSDictionary *errDict = nil;
+        if (![appleScript executeAndReturnError:&errDict]) {
+            NSLog(@"%@", errDict);
+        }
+        
+    }
+    
+}
+
+-(void)showTB3EnablerRestartActionSheet{
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"Restart Your Mac";
+    alert.informativeText = @"You need to restart your Mac. After reboot, please, run BIZON BOX Device Manager and press \"Step 2\" button.";
+    NSButton *button = [alert addButtonWithTitle:@"Restart"];
+//    [alert addButtonWithTitle:@"Restart Later"];
     [button becomeFirstResponder];
     
     NSBundle *bundle  = [NSBundle bundleForClass:[self class]];
